@@ -1,12 +1,23 @@
+// Import Fonts
+@font-face 
+  font-family: 'Cairo'
+  src: url('assets/fonts/Cairo-Regular.ttf'), url('assets/fonts/Cairo-Medium.ttf'), url('assets/fonts/Cairo-Bold.ttf')
+@font-face 
+  font-family: 'Lilita One'
+  src: url('assets/fonts/LilitaOne-Regular.ttf')
+  
 // Fonts
-$font: 'Cairo', sans-serif
-$special-font: 'Alkatra', cursive
+$f-ordinary: 'Cairo', sans-serif
+$f-special: 'Lilita One', cursive
 // Colors
-$high-contrast: #fff
-$accent: #05b0ff
-$ordinary: #272727
+$c-contrast: #fff
+$c-accent: #05b0ff
+$c-ordinary: #272727
 
 // Breakpoints Mixins
+@mixin sm-screen()
+  @media (min-width: 20rem)
+    @content
 @mixin md-screen()
   @media (min-width: 50rem)
     @content

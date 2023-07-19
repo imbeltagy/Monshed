@@ -7,11 +7,7 @@ const gulp = require("gulp"),
 
 // Compile Pug Files
 gulp.task("compile-pug", () =>
-  gulp
-    .src("./stage/pug/*.pug")
-    .pipe(pug())
-    .pipe(gulp.dest("./docs/"))
-    .pipe(connect.reload())
+  gulp.src("./stage/index.pug").pipe(pug()).pipe(gulp.dest("./docs/")).pipe(connect.reload())
 );
 
 // Compile SASS Files With Prefixes
@@ -26,17 +22,11 @@ gulp.task("compile-sass", () =>
 
 // Redirect JS Files
 gulp.task("redirect-js", () =>
-  gulp
-    .src("./stage/js/app.js")
-    .pipe(uglify())
-    .pipe(gulp.dest("./docs/assets/"))
-    .pipe(connect.reload())
+  gulp.src("./stage/js/app.js").pipe(uglify()).pipe(gulp.dest("./docs/")).pipe(connect.reload())
 );
 
 // Redirect Images
-gulp.task("redirect-images", () =>
-  gulp.src("./stage/images/**/*.*").pipe(gulp.dest("./docs/assets/images/"))
-);
+gulp.task("redirect-assets", () => gulp.src("./stage/assets/**").pipe(gulp.dest("./docs/assets/")));
 
 // Start Server & Watch Changes
 gulp.task("default", () => {
@@ -44,10 +34,7 @@ gulp.task("default", () => {
     root: "./docs/",
     livereload: true,
   });
-  gulp.watch(
-    "./stage/pug/**/*.pug",
-    gulp.series(["compile-pug", "redirect-images"])
-  );
-  gulp.watch("./stage/sass/**/*.sass", gulp.series("compile-sass"));
-  gulp.watch("./stage/js/**/*.js", gulp.series("redirect-js"));
+  gulp.watch("./stage/**/*.pug", gulp.series(["compile-pug", "redirect-assets"]));
+  gulp.watch("./stage/**/*.sass", gulp.series("compile-sass"));
+  gulp.watch("./stage/**/*.js", gulp.series("redirect-js"));
 });
