@@ -1,0 +1,173 @@
+@import resets
+@import configs
+
+// Navigator
+// =========
+// 1. Glubal Rules
+// 2. Hero
+
+
+// ===============
+// 1. Global Rules
+// ===============
+body
+  font-family: $font
+  color: $high-contrast
+
+.container
+  width: min(50rem, 95%)
+  margin-inline: auto
+  padding: 1rem
+  @include lg-screen()
+    width: 73rem
+
+.img-container img 
+  max-width: 100%
+
+// =========
+// 2. Hero
+// =========
+.hero
+  height: 100%
+  display: grid
+  grid-template-rows: auto 1fr
+  background-image: url("assets/images/hero-bg.png")
+  background-size: cover
+  background-repeat: repeat
+  background-position: center center
+
+// Header
+header .container
+  display: flex
+  justify-content: space-between
+  align-items: stretch
+  padding: 1em
+  margin-top: 1.5em
+  background-color: $high-contrast
+
+  .logo
+    font-family: $special-font
+    font-size: 2em
+    color: $accent
+    padding: 0
+    line-height: 1
+
+  ul
+    min-height: 100%
+    display: none
+    @include md-screen
+      display: flex
+    
+  li
+    display: flex
+    align-items: center
+    border-bottom: .2em solid transparent
+    padding-inline: .8em
+    cursor: pointer
+    &:hover
+      a
+        color: $accent
+        transition: color .3s
+
+    a
+      color: $ordinary
+      font-size: 1.1em
+      font-weight: 700
+      text-decoration: none
+      transition: color .3s
+    
+// Main
+main .container
+  height: 100%
+  display: flex
+  flex-direction: column-reverse
+  align-items: center
+  justify-content: flex-end
+  // gap: 1.5rem
+  padding-top: 1.5rem
+  @include md-screen
+    flex-direction: row
+    justify-content: space-between
+    padding: 0
+  .brief
+    text-align: center
+    @include md-screen
+      text-align: left
+      
+    .text
+      font-size: 1.3rem
+
+      .welcome
+        color: $accent
+        font-weight: 700
+        font-size: 1.3em
+        margin-top: 3rem
+        @include md-screen
+          margin-top: 0
+
+      h1
+        font-family: $special-font
+        font-size: min(20vw, 4em)
+        line-height: 1
+        @include md-screen
+          font-size: 3em
+        @include lg-screen
+          font-size: 4em
+
+  button
+    margin-top: 1em
+    background-color: $accent
+    color: #fff
+    font-size: 1.8em
+    border: none
+    border-radius: .2em
+    padding: .6em 1.2em
+    cursor: pointer
+    box-shadow: 0 0 1em $accent
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out
+    &:hover,
+    &:focus
+      background-color: darken($accent, 10%)
+      outline: none
+      box-shadow: 0 0 0 $accent
+    &:active
+      background-color: darken($accent, 20%)
+      box-shadow: 0 0 0 $accent
+    &:not(:disabled)
+      &:focus
+        box-shadow: 0 0 0 3px rgba($accent, 0.5)
+          
+      
+
+  .picture
+    position: relative
+    margin-inline: 2rem
+    // border-radius: 5rem
+    // animation: move-verticaly 7s ease-in-out infinite
+    flex-shrink: 0
+    width: min(35vmin, 500px)
+    @media (max-height: 42rem) and (max-width: 50rem)
+      display: none
+    &::before
+      content:""
+      position: absolute
+      width: 60%
+      left: 50%
+      top: 1%
+      transform: translate(-50%)
+      aspect-ratio: 1 / 1
+      border-radius: 100%
+      box-shadow: 0 0 0 1em rgba($accent, 0.5), 0 0 0 2em rgba($accent, 0.2)
+      background-color: $accent
+
+
+    img
+      filter: drop-shadow(0 0 2em $accent)
+      border-radius: 1em
+    @keyframes move-verticaly
+      0%
+        transform: translateY(-7%) 
+      50%
+        transform: translateY(0%)
+      100%
+        transform: translateY(-7%)

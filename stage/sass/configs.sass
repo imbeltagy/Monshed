@@ -1,0 +1,15 @@
+// Fonts
+$font: 'Cairo', sans-serif
+$special-font: 'Alkatra', cursive
+// Colors
+$high-contrast: #fff
+$accent: #05b0ff
+$ordinary: #272727
+
+// Breakpoints Mixins
+@mixin md-screen()
+  @media (min-width: 50rem)
+    @content
+@mixin lg-screen()
+  @media (min-width: 75rem)
+    @content
