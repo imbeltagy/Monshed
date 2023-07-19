@@ -4,45 +4,44 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Nasr Elsalafy
+    title Monshed
 
     //- Search Engine Meta
     meta(name="description", content="I can make you a cool simple intro for your work using Blender")
     meta(name="keyword", content="Nasr, Nasr Elsalafy, Elsalafy, blender, blender intro, video intro, intro, graphical intro")
 
-    //- Import Font
-    link(rel="preconnect" href="https://fonts.googleapis.com")
-    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-    //- Alkatra
-    link(href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&display=swap" rel="stylesheet")
-    //- Cairo
-    link(href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet")
-
     //- Style Sheet
     link(rel="stylesheet", href="main.css")
+
   body
     section.hero
-      header
-        .container
-          h2.logo Monshed
-          nav
-            ul
-              li 
-                a(href="#") Home
-              li 
-                a(href="#") About
-              li 
-                a(href="#") Services
-              li 
-                a(href="#") Contact
-      main
-        .container
-          article.brief
-            .text
-              p.welcome Hello,
-              h1 I'm Intro Maker
-              p.brief I can make you cool intro using blender depending on your needs.
-            button(onclick="location.href='mailto:nasr@gmail.com';") Hire Me!
-          .picture
-            .img-container 
-              img(src="assets/images/picture.png" alt="Nasr Elsalafy's Picture.")
+      nav.navbar.container
+        img.brand(src="assets/images/brand.svg", alt="Monshed", width="200")
+        #nav-icon.nav-icon
+          span 
+          span 
+          span 
+        #nav-list.nav-list
+          ul
+            li 
+              a(href="#home") Home
+            li 
+              a(href="#about") About
+            li 
+              a(href="#services") Services
+            li 
+              a(href="#contact") Contact
+      //- main
+      //-   .container
+      //-     article.brief
+      //-       .text
+      //-         p.welcome Hello,
+      //-         h1 I'm Intro Maker
+      //-         p.brief I can make you cool intro using blender depending on your needs.
+      //-       button(onclick="location.href='mailto:nasr@gmail.com';") Hire Me!
+      //-     .picture
+      //-       .img-container 
+      //-         img(src="assets/images/illustrator.svg" alt="Nasr Elsalafy's Picture.")
+
+
+    script(src="app.js") 

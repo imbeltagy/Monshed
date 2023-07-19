@@ -15,14 +15,12 @@ body
   color: $c-ordinary
 
 .container
-  width: min(50rem, 95%)
+  width: calc( 100% - $s-3 * 2 )
   margin-inline: auto
-  padding: 1rem
-  @include sm-screen
-    width: 18rem
-  @include md-screen
+  padding: $s-3
+  @include md-screens
     width: 48rem
-  @include lg-screen
+  @include lg-screens
     width: 73rem
 
 .img-container img 
@@ -32,53 +30,137 @@ body
 // 2. Hero
 // =========
 .hero
-  height: 100%
+  min-height: 100svh
   display: grid
   grid-template-rows: auto 1fr
-  background-image: url("assets/images/banner.svg")
+  background-image: url("assets/images/banner.png")
   background-size: cover
-  background-repeat: repeat
-  background-position: center center
+  background-repeat: no-repeat
+  background-position: center
 
-// Header
-header .container
+// Nav Bar
+.navbar
+  z-index: 100
+  position: relative
   display: flex
-  justify-content: space-between
-  align-items: stretch
-  padding: 1em
-  margin-top: 1.5em
+  align-items: center
+  gap: $s-3
+  padding: $s-3
+  margin-top: $s-4
   background-color: $c-contrast
+  margin-inline: auto
+  @include md-screens
+    justify-content: space-between
+    
 
-  .logo
+  .brand
     font-family: $f-special
-    font-size: 2em
+    font-size: 2rem
     color: $c-accent
-    padding: 0
     line-height: 1
+    max-width: calc(100% - 4rem)
+
+  .nav-icon
+    position: relative
+    margin-left: auto
+    width: 1.5rem
+    flex-shrink: 0
+    aspect-ratio: 1 / 1
+    cursor: pointer
+    overflow: hidden
+    @include md-screens
+      display: none
+
+    span
+      display: block
+      position: absolute
+      left: 0
+      width: 100%
+      height: .2rem
+      background-color: $c-ordinary
+      border-radius: .1rem
+      transition: background-color .3s, inset .3s, transform .3s
+      &:first-child
+        top: 0
+      &:nth-child(2)
+        top: 50%
+        transform: translateY(-50%)
+      &:last-child
+        bottom: 0
+    &:hover span
+      background-color: $c-accent
+    &.opened span
+      &:first-child
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%) rotate(45deg)
+      &:nth-child(2)
+        left: 100%
+      &:last-child
+        bottom: 50%
+        left: 50%
+        transform: translate(-50%, 50%) rotate(-45deg)
+
+  .nav-list
+    position: absolute
+    top: 100%
+    right: 0
+    display: grid
+    grid-template-rows: 0fr
+    transition: grid-template-rows .5s
+    background-color: inherit
+    &.opened
+      grid-template-rows: 1fr
+    @include md-screens
+      position: static
+      display: flex
+      align-items: center
+      height: auto
 
   ul
-    min-height: 100%
-    display: none
-    @include md-screen
+    overflow: hidden
+    @include md-screens
+      overflow: visible
       display: flex
+      gap: $s-4
     
   li
-    display: flex
-    align-items: center
-    border-bottom: .2em solid transparent
-    padding-inline: .8em
+    font-size: 1.1rem
     cursor: pointer
-    &:hover
-      a
-        color: $c-accent
-        transition: color .3s
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      right: 0
+      width: 100%
+      height: .1rem
+      background-color: $c-ordinary
+      transition: width .3s, background-color .3s
+      @include md-screens
+        top: 100%
+        width: 0
+        height: .2rem
+        border-radius: .1rem
+    @include md-screens
+      &:hover::before
+        right: auto
+        left: 0
+        width: 100%
+        background-color: $c-accent
 
     a
+      display: inline-block
       color: $c-ordinary
       font-size: 1.1em
-      font-weight: 700
+      font-weight: 500
       text-decoration: none
       transition: color .3s
+      padding: $s-3 $s-5
+      &:hover
+        color: $c-accent
+      @include md-screens
+        padding: 0
     
 // Main
 main .container
@@ -89,13 +171,13 @@ main .container
   justify-content: flex-end
   // gap: 1.5rem
   padding-top: 1.5rem
-  @include md-screen
+  @include md-screens
     flex-direction: row
     justify-content: space-between
     padding: 0
   .brief
     text-align: center
-    @include md-screen
+    @include md-screens
       text-align: left
       
     .text
@@ -106,16 +188,16 @@ main .container
         font-weight: 700
         font-size: 1.3em
         margin-top: 3rem
-        @include md-screen
+        @include md-screens
           margin-top: 0
 
       h1
         font-family: $f-special
         font-size: min(20vw, 4em)
         line-height: 1
-        @include md-screen
+        @include md-screens
           font-size: 3em
-        @include lg-screen
+        @include lg-screens
           font-size: 4em
 
   button

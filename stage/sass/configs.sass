@@ -13,14 +13,20 @@ $f-special: 'Lilita One', cursive
 $c-contrast: #fff
 $c-accent: #05b0ff
 $c-ordinary: #272727
+// Sizes
+$s-1: .25rem
+$s-2: .5rem
+$s-3: 1rem
+$s-4: 1.5rem
+$s-5: 3rem
 
 // Breakpoints Mixins
-@mixin sm-screen()
+@mixin sm-screens()
   @media (min-width: 20rem)
     @content
-@mixin md-screen()
+@mixin md-screens()
   @media (min-width: 50rem)
     @content
-@mixin lg-screen()
+@mixin lg-screens()
   @media (min-width: 75rem)
     @content
