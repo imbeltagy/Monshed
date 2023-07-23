@@ -124,7 +124,7 @@ body
       display: flex
       gap: $s-4
     
-  li:not(#lang-switcher)
+  li
     font-size: 1.1rem
     cursor: pointer
     position: relative
@@ -139,13 +139,13 @@ body
       height: .1rem
       background-color: $c-ordinary
       transition: width $fast-trans, background-color $fast-trans
-      @include md-screens
+    @include md-screens
+      &:not(#lang-switcher)::before
         top: 100%
         width: 0
         height: .2rem
         border-radius: .1rem
-    @include md-screens
-      &:hover::before
+      &:not(#lang-switcher):hover::before
         inset-inline-end: auto
         inset-inline-start: 0
         width: 100%
@@ -164,8 +164,13 @@ body
 
   #lang-switcher
     cursor: pointer
-    max-width: 2.5rem
     align-self: center
+    img
+      padding: $s-3 $s-5
+      max-width: 2.5rem + $s-5 + $s-5
+      @include md-screens
+        max-width: 2.5rem
+        padding: 0
     
 // Main
 main .container

@@ -6,7 +6,6 @@ document.getElementById("nav-icon").onclick = function () {
 
 // Switch Languages
 const contents = {
-  "nav-lang": "Arabic",
   "nav-home": "Home",
   "nav-about": "About",
   "nav-services": "Services",
