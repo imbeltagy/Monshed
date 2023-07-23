@@ -1,17 +1,17 @@
 doctype html
-html(lang="en")
+html(lang="ar", dir="rtl")
   head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Monshed
+  meta(charset="UTF-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  title Monshed
 
-    //- Search Engine Meta
-    meta(name="description", content="I can make you a cool simple intro for your work using Blender")
-    meta(name="keyword", content="Nasr, Nasr Elsalafy, Elsalafy, blender, blender intro, video intro, intro, graphical intro")
+  //- Search Engine Meta
+  meta(name="description", content="I can make you a cool simple intro for your work using Blender")
+  meta(name="keyword", content="Zaid, Osama, Monshed, social media services, social media, digital marketing")
 
-    //- Style Sheet
-    link(rel="stylesheet", href="main.css")
+  //- Style Sheet
+  link(rel="stylesheet", href="main.css")
 
   body
     section.hero
@@ -24,13 +24,15 @@ html(lang="en")
         #nav-list.nav-list
           ul
             li 
-              a(href="#home") Home
+              a(href="#home", data-name="nav-home") الرئيسية
             li 
-              a(href="#about") About
+              a(href="#about", data-name="nav-about") عنا
             li 
-              a(href="#services") Services
+              a(href="#services", data-name="nav-services") خدماتنا
             li 
-              a(href="#contact") Contact
+              a(href="#contact", data-name="nav-contact") تواصل معنا
+            li#lang-switcher
+              img(src="assets/images/flags/en.svg", data-alt="assets/images/flags/ar.svg" alt="Change Language", title="Change Language")
       //- main
       //-   .container
       //-     article.brief
