@@ -4,9 +4,32 @@ document.getElementById("nav-icon").onclick = function () {
   document.getElementById("nav-list").classList.toggle("opened");
 };
 
+// Change Nav Bar To Fixed While Scrolling
+const navbar = document.querySelector(".navbar"),
+  margintop = parseFloat(getComputedStyle(navbar).getPropertyValue("margin-top")),
+  sections = Array.from(document.getElementsByTagName("section"));
+window.onscroll = () => {
+  if (scrollY >= margintop) {
+    navbar.classList.add("fixed");
+  } else {
+    navbar.classList.remove("fixed");
+  }
+  sections.forEach((sect) => {
+    if (
+      sect.classList.contains("bg-light") &&
+      scrollY + navbar.offsetHeight >= sect.offsetTop &&
+      scrollY + navbar.offsetHeight <= sect.offsetTop + sect.offsetHeight
+    ) {
+      navbar.classList.add("nav-dark");
+    } else {
+      navbar.classList.remove("nav-dark");
+    }
+  });
+};
+
 // Switch Languages
 const contents = {
-  // Hero
+  // Nav
   "nav-home": "Home",
   "nav-about": "About",
   "nav-services": "Services",
@@ -16,6 +39,9 @@ const contents = {
   "main-title": "Social Media and Digital Marketing Services",
   "main-bief": "We have a course that teaches you digital marketing from scratch",
   "main-link": "Book Now!",
+  // About
+  "about-title-h": "About Us",
+  "about-title-p": "What Monshed is and what it provides.",
 };
 
 const html = document.getElementsByTagName("html")[0],

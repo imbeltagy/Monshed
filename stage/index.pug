@@ -15,11 +15,11 @@ html(lang="ar", dir="rtl")
 
   body
     //- Hero Section
-    section#home.hero
-      nav.navbar.container
+    section#home.hero.bg-dark
+      nav.navbar.container.no-spaces
         a.brand(href="#home")
           img(src="assets/images/brand.svg", alt="Monshed", width="200")
-        #nav-icon.nav-icon
+        #nav-icon.nav-icon(tabindex="0")
           span 
           span 
           span 
@@ -36,7 +36,7 @@ html(lang="ar", dir="rtl")
             li#lang-switcher
               img(src="assets/images/flags/en.svg", data-alt="assets/images/flags/ar.svg" alt="Change Language", title="Change Language")
       main
-        .container
+        .container.no-spaces
           .text
             p.welcome(data-name="main-welcome") مرحبا، نحن شركة منشد. نحن مختصون في
             h1(data-name="main-title") خدمات السوشيال ميديا والتسويق الإلكتروني
@@ -46,10 +46,11 @@ html(lang="ar", dir="rtl")
             img(src="assets/images/illustrator.svg" alt="Nasr Elsalafy's Picture.")
             
     //- Hero Section
-    section#about.about 
-      .title 
-        h2 About Us
-        p What Monshed is and what it provides.
+    section#about.about.bg-light
+      .container
+        .title 
+          h2(data-name="about-title-h") من نحن
+          p(data-name="about-title-p") ما هى منشد وماذا تقدم.
 
 
     script(src="app.js") 
