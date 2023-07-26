@@ -6,10 +6,16 @@ document.getElementById("nav-icon").onclick = function () {
 
 // Switch Languages
 const contents = {
+  // Hero
   "nav-home": "Home",
   "nav-about": "About",
   "nav-services": "Services",
   "nav-contact": "Contact",
+  // Main
+  "main-welcome": "Hello, we are Monshed Company. We specialize in",
+  "main-title": "Social Media and Digital Marketing Services",
+  "main-bief": "We have a course that teaches you digital marketing from scratch",
+  "main-link": "Book Now!",
 };
 
 const html = document.getElementsByTagName("html")[0],

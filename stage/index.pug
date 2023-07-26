@@ -34,17 +34,15 @@ html(lang="ar", dir="rtl")
               a(href="#contact", data-name="nav-contact") تواصل معنا
             li#lang-switcher
               img(src="assets/images/flags/en.svg", data-alt="assets/images/flags/ar.svg" alt="Change Language", title="Change Language")
-      //- main
-      //-   .container
-      //-     article.brief
-      //-       .text
-      //-         p.welcome Hello,
-      //-         h1 I'm Intro Maker
-      //-         p.brief I can make you cool intro using blender depending on your needs.
-      //-       button(onclick="location.href='mailto:nasr@gmail.com';") Hire Me!
-      //-     .picture
-      //-       .img-container 
-      //-         img(src="assets/images/illustrator.svg" alt="Nasr Elsalafy's Picture.")
+      main
+        .container
+          .text
+            p.welcome(data-name="main-welcome") مرحبا، نحن شركة منشد. نحن مختصون في
+            h1(data-name="main-title") خدمات السوشيال ميديا والتسويق الإلكتروني
+            p.brief(data-name="main-bief") لدينا دورة تعلمك التسويق الالكتروني من الصفر
+            a.btn(href="mailto:contact@monshed.com?subject=Digital%20Marketing%20Course", data-name="main-link") احجز الآن!
+          .picture
+            img(src="assets/images/illustrator.svg" alt="Nasr Elsalafy's Picture.")
 
 
     script(src="app.js") 

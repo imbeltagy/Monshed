@@ -17,7 +17,6 @@ body
 .container
   width: calc( 100% - $s-3 * 2 )
   margin-inline: auto
-  padding: $s-3
   @include md-screens
     width: 48rem
   @include lg-screens
@@ -36,7 +35,7 @@ body
   background-image: url("assets/images/banner.png")
   background-size: cover
   background-repeat: no-repeat
-  background-position: center
+  background-color: #0b1765
 
 // Nav Bar
 .navbar
@@ -179,48 +178,56 @@ main .container
   flex-direction: column-reverse
   align-items: center
   justify-content: flex-end
-  // gap: 1.5rem
-  padding-top: 1.5rem
+  gap: $s-4
+  padding-top: $s-4
   @include md-screens
     flex-direction: row
     justify-content: space-between
-    padding: 0
-  .brief
+    padding-top: $s-5
+
+  .text
+    width: min(30rem, 90vw)
+    white-space: balance
     text-align: center
     @include md-screens
-      text-align: left
-      
-    .text
-      font-size: 1.3rem
+      width: auto
+      text-align: start
+    font-size: 1.3rem
 
-      .welcome
-        color: $c-accent
-        font-weight: 700
-        font-size: 1.3em
-        margin-top: 3rem
-        @include md-screens
-          margin-top: 0
+    .welcome
+      color: $c-contrast
+      font-weight: 700
+      font-size: 1.3em
 
-      h1
-        font-family: $f-special
-        font-size: min(20vw, 4em)
-        line-height: 1
-        @include md-screens
-          font-size: 3em
-        @include lg-screens
-          font-size: 4em
+    h1
+      color: $c-accent
+      font-family: $f-special
+      font-size: 2em
+      line-height: 1
+      margin-bottom: .2em
+      @include lg-screens
+        font-size: 3em
+    
+    .brief
+      color: $c-contrast
 
-  button
-    margin-top: 1em
+  .btn
+    display: block
+    width: fit-content
+    margin-inline: auto
+    text-decoration: none
     background-color: $c-accent
     color: #fff
-    font-size: 1.8em
+    font-size: 1.6em
     border: none
     border-radius: .2em
-    padding: .6em 1.2em
+    padding: $s-2 $s-3
+    margin-top: $s-3
     cursor: pointer
     box-shadow: 0 0 1em $c-accent
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out
+    @include md-screens
+      margin-inline-start: 0
     &:hover,
     &:focus
       background-color: darken($c-accent, 10%)
@@ -231,39 +238,32 @@ main .container
       box-shadow: 0 0 0 $c-accent
     &:not(:disabled)
       &:focus
-        box-shadow: 0 0 0 3px rgba($c-accent, 0.5)
-          
-      
+        box-shadow: 0 0 0 3px rgba($c-accent, 0.5)    
 
-  .picture
+[dir="ltr"] h1
+  letter-spacing: .05em
+
+main .container .picture
+  position: relative
+  flex-shrink: 0
+  margin-top: 4rem
+  @include md-screens
+    margin-top: 0
+    width: 25rem
+  @include lg-screens
+    width: 30rem
+  &::before
+    content:""
+    position: absolute
+    width: 53%
+    height: 72%
+    left: 23%
+    top: 3%
+    border-radius: .6rem
+    box-shadow: 0 0 0 1rem rgba($c-accent, 0.5), 0 0 0 2rem rgba($c-accent, 0.2)
+    background-color: $c-accent
+
+  img
+    width: 100%
     position: relative
-    margin-inline: 2rem
-    // border-radius: 5rem
-    // animation: move-verticaly 7s ease-in-out infinite
-    flex-shrink: 0
-    width: min(35vmin, 500px)
-    @media (max-height: 42rem) and (max-width: 50rem)
-      display: none
-    &::before
-      content:""
-      position: absolute
-      width: 60%
-      left: 50%
-      top: 1%
-      transform: translate(-50%)
-      aspect-ratio: 1 / 1
-      border-radius: 100%
-      box-shadow: 0 0 0 1em rgba($c-accent, 0.5), 0 0 0 2em rgba($c-accent, 0.2)
-      background-color: $c-accent
-
-
-    img
-      filter: drop-shadow(0 0 2em $c-accent)
-      border-radius: 1em
-    @keyframes move-verticaly
-      0%
-        transform: translateY(-7%) 
-      50%
-        transform: translateY(0%)
-      100%
-        transform: translateY(-7%)
+    border-radius: 1rem
