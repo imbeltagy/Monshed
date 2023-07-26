@@ -1,5 +1,6 @@
 @import resets
 @import configs
+@import components
 
 // Navigator
 // =========
@@ -25,9 +26,9 @@ body
 .img-container img 
   max-width: 100%
 
-// =========
+// =======
 // 2. Hero
-// =========
+// =======
 .hero
   min-height: 100svh
   display: grid
@@ -210,35 +211,6 @@ main .container
     
     .brief
       color: $c-contrast
-
-  .btn
-    display: block
-    width: fit-content
-    margin-inline: auto
-    margin-top: $s-3
-    padding: $s-2 $s-3
-    color: #fff
-    font-size: 1.6em
-    text-decoration: none
-    border: none
-    outline: none
-    border-radius: .2em
-    cursor: pointer
-    background-color: $c-accent
-    box-shadow: 0 0 1em $c-accent
-    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out
-    @include md-screens
-      margin-inline-start: 0
-    &:hover,
-    &:focus
-      background-color: darken($c-accent, 10%)
-      box-shadow: 0 0 0 3px rgba($c-accent, 0.5)
-    &:active
-      background-color: darken($c-accent, 20%)
-      box-shadow: 0 0 0 $c-accent
-    &:disabled
-      background-color: darken($c-accent, 10%)
-      box-shadow: none
 
 [dir="ltr"] h1
   letter-spacing: .05em
