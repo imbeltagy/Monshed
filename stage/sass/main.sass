@@ -215,15 +215,16 @@ main .container
     display: block
     width: fit-content
     margin-inline: auto
-    text-decoration: none
-    background-color: $c-accent
+    margin-top: $s-3
+    padding: $s-2 $s-3
     color: #fff
     font-size: 1.6em
+    text-decoration: none
     border: none
+    outline: none
     border-radius: .2em
-    padding: $s-2 $s-3
-    margin-top: $s-3
     cursor: pointer
+    background-color: $c-accent
     box-shadow: 0 0 1em $c-accent
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out
     @include md-screens
@@ -231,14 +232,13 @@ main .container
     &:hover,
     &:focus
       background-color: darken($c-accent, 10%)
-      outline: none
-      box-shadow: 0 0 0 $c-accent
+      box-shadow: 0 0 0 3px rgba($c-accent, 0.5)
     &:active
       background-color: darken($c-accent, 20%)
       box-shadow: 0 0 0 $c-accent
-    &:not(:disabled)
-      &:focus
-        box-shadow: 0 0 0 3px rgba($c-accent, 0.5)    
+    &:disabled
+      background-color: darken($c-accent, 10%)
+      box-shadow: none
 
 [dir="ltr"] h1
   letter-spacing: .05em
