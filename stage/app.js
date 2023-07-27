@@ -68,6 +68,11 @@ const contents = {
   "gallary-headding-p": "Some of our work",
   "gallary-slider-prev": "prev",
   "gallary-slider-next": "next",
+  // Testimonials
+  "testimonials-headding-h": "Testimonials",
+  "testimonials-headding-p": "What them sayed about us",
+  "testimonials-quote":
+    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, aperiam veniam odit alias pariatur velit",
 };
 
 const html = document.getElementsByTagName("html")[0],
