@@ -42,6 +42,27 @@ const contents = {
   // About
   "about-title-h": "About Us",
   "about-title-p": "What Monshed is and what it provides.",
+  // -- card 1
+  "card1-h": "Monshed Company",
+  "card1-p":
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum alias ea officiis distinctio totam perferendis porro voluptas hic delectus suscipit.",
+  "card1-span1": "Based In: Tanta, Egypt",
+  "card1-span2": "Stablish Date: xx - xx - xxxx",
+  "card1-span3": "Work Field: Social Media Services",
+  // -- card 2
+  "card2-h": "Zaid Osama",
+  "card2-p":
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum alias ea officiis distinctio totam perferendis porro voluptas hic delectus suscipit.",
+  "card2-span1": "Based In: Tanta, Egypt",
+  "card2-span2": "Work Field: Digital Marketing",
+  "card2-span3": "Work Experience: +x yr",
+  // -- card 3
+  "card3-h": "Monshed Company",
+  "card3-p":
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum alias ea officiis distinctio totam perferendis porro voluptas hic delectus suscipit.",
+  "card3-span1": "Based In: Tanta, Egypt",
+  "card3-span2": "Stablish Date: xx - xx - xxxx",
+  "card3-span3": "Work Field: Social Media Services",
 };
 
 const html = document.getElementsByTagName("html")[0],

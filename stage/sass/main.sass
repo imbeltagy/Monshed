@@ -6,6 +6,8 @@
 // =========
 // 1. Global Rules
 // 2. Hero
+// 3. About
+// 4. Gallary
 
 
 // ===============
@@ -13,10 +15,13 @@
 // ===============
 html
   scroll-behavior: smooth
+section
+  scroll-margin-top: 5.25rem
 
 body
   font-family: $f-ordinary
   color: $c-ordinary
+  background-color: $bg-light
   height: 5000px // Temp
 
 .container
@@ -186,6 +191,9 @@ body
     #lang-switcher
       cursor: pointer
       align-self: center
+      @include md-screens
+        &::before
+          background-color: unset 
       img
         padding: $s-3 $s-5
         max-width: 2.5rem + $s-5 + $s-5
@@ -194,7 +202,7 @@ body
           padding: 0
   
   &.nav-dark li::before
-    background-color: $c-contrast 
+    background-color: $c-contrast
 
 // Main
 main .container
@@ -261,3 +269,38 @@ main .container .picture
     width: 100%
     position: relative
     border-radius: 1rem
+
+// ========
+// 2. About
+// ========
+.about .cards
+  display: grid
+  gap: $s-3
+  @include sm-screens
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr))
+  @include md-screens
+    grid-template-columns: 1fr 1fr 1fr
+
+  .card
+    background-color: $c-ordinary
+    color: $c-contrast
+    overflow: hidden
+    border-radius: .5rem
+
+    img
+      aspect-ratio: 5 / 3
+      object-fit: cover
+      width: 100%
+
+    .text
+      padding: $s-3
+      padding-bottom: $s-4
+
+    h3
+      font-size: 1.4rem
+      line-height: 2
+
+    span
+      display: block
+      padding-top: .4rem
+      font-weight: bold
