@@ -16,13 +16,14 @@ window.onscroll = () => {
   }
   sections.forEach((sect) => {
     if (
-      sect.classList.contains("bg-light") &&
       scrollY + navbar.offsetHeight >= sect.offsetTop &&
       scrollY + navbar.offsetHeight <= sect.offsetTop + sect.offsetHeight
     ) {
-      navbar.classList.add("nav-dark");
-    } else {
-      navbar.classList.remove("nav-dark");
+      if (sect.classList.contains("bg-light")) {
+        navbar.classList.add("nav-dark");
+      } else {
+        navbar.classList.remove("nav-dark");
+      }
     }
   });
 };
@@ -40,8 +41,8 @@ const contents = {
   "main-bief": "We have a course that teaches you digital marketing from scratch",
   "main-link": "Book Now!",
   // About
-  "about-title-h": "About Us",
-  "about-title-p": "What Monshed is and what it provides.",
+  "about-headding-h": "About Us",
+  "about-headding-p": "What Monshed is and what it provides.",
   // -- card 1
   "card1-h": "Monshed Company",
   "card1-p":
@@ -63,6 +64,9 @@ const contents = {
   "card3-span1": "Based In: Tanta, Egypt",
   "card3-span2": "Stablish Date: xx - xx - xxxx",
   "card3-span3": "Work Field: Social Media Services",
+  // Gallary
+  "gallary-headding-h": "Gallary",
+  "gallary-headding-p": "Some of our work",
 };
 
 const html = document.getElementsByTagName("html")[0],
