@@ -15,7 +15,7 @@ html(lang="ar", dir="rtl")
 
   body
     //- Hero Section
-    section#home.hero.bg-dark
+    section#home.hero
       nav.navbar.container.no-spaces
         a.brand(href="#home")
           img(src="assets/images/brand.svg", alt="Monshed", width="200")
@@ -30,7 +30,7 @@ html(lang="ar", dir="rtl")
             li 
               a(href="#about", data-name="nav-about") عنا
             li 
-              a(href="#services", data-name="nav-services") خدماتنا
+              a(href="#gallary", data-name="nav-gallary") المعرض
             li 
               a(href="#contact", data-name="nav-contact") تواصل معنا
             li#lang-switcher
@@ -49,8 +49,8 @@ html(lang="ar", dir="rtl")
     section#about.about.bg-light
       .container
         .headding 
-          h2(data-name="about-title-h") من نحن
-          p(data-name="about-title-p") ما هى منشد وماذا تقدم.
+          h2(data-name="about-headding-h") من نحن
+          p(data-name="about-headding-p") ما هى منشد وماذا تقدم.
 
         .cards 
           .card 
@@ -77,7 +77,28 @@ html(lang="ar", dir="rtl")
               span(data-name="card3-span1") المقر: طنطا، مصر
               span(data-name="card3-span2") تاريخ التأسيس: ++ - ++ - ++++
               span(data-name="card3-span3") مجال العمل: خدمات السوشيال ميديا
-
+            
+    //- Gallary Section
+    section#gallary.gallary
+      .container.fluid
+        .headding.light
+          h2(data-name="gallary-headding-h") المعرض
+          p(data-name="gallary-headding-p") تصفح بعض اعمالنا المميزة
+        .slider 
+          .img.none
+          .img.red
+          .img.green
+          .img.yellow
+          .img.blue
+          .img.violet
+          .img.red
+          .img.green
+          .img.yellow
+          .img.blue
+          .img.violet
+        .slider-controls
+          button.prev.disabled(data-name="gallary-slider-prev") السابق
+          button.next(data-name="gallary-slider-next") التالي
 
 
     script(src="app.js") 

@@ -27,13 +27,12 @@ window.onscroll = () => {
     }
   });
 };
-
 // Switch Languages
 const contents = {
   // Nav
   "nav-home": "Home",
   "nav-about": "About",
-  "nav-services": "Services",
+  "nav-gallary": "Gallary",
   "nav-contact": "Contact",
   // Main
   "main-welcome": "Hello, we are Monshed Company. We specialize in",
@@ -67,6 +66,8 @@ const contents = {
   // Gallary
   "gallary-headding-h": "Gallary",
   "gallary-headding-p": "Some of our work",
+  "gallary-slider-prev": "prev",
+  "gallary-slider-next": "next",
 };
 
 const html = document.getElementsByTagName("html")[0],
@@ -108,3 +109,73 @@ window.onload = () => {
     toggleContent();
   }
 };
+
+// Apply Slide On Gallary
+const slider = document.querySelector(".gallary .slider"),
+  slides = Array.from(slider.children);
+slides.shift(); // To Remove The First Image Which Is Unvisible
+
+// Get width, gaps, images count
+let count = parseInt(getComputedStyle(slider).getPropertyValue("--images-count")),
+  gap = parseFloat(getComputedStyle(slider).getPropertyValue("gap")),
+  sliderWidth = parseFloat(getComputedStyle(slider).getPropertyValue("width"));
+let slideWidth = (sliderWidth - gap * (count - 1)) / count;
+
+function resizeSlides() {
+  count = parseInt(getComputedStyle(slider).getPropertyValue("--images-count"));
+  gap = parseFloat(getComputedStyle(slider).getPropertyValue("gap"));
+  sliderWidth = parseFloat(getComputedStyle(slider).getPropertyValue("width"));
+
+  slideWidth = (sliderWidth - gap * (count - 1)) / count;
+
+  // set width for visible images
+  slides.forEach((slide, i) => {
+    slide.style.width = slideWidth + "px";
+  });
+  // set width for the unvisible one
+  slider.firstElementChild.style.width = slideWidth + "px";
+  // Move Images
+  slide();
+}
+
+window.onload = resizeSlides;
+window.onresize = resizeSlides;
+
+// Add Event To Move Slides
+const prevBtn = document.querySelector(".slider-controls .prev"),
+  nextBtn = document.querySelector(".slider-controls .next");
+let moves = 0;
+function slide() {
+  slides.forEach((slide, i) => {
+    slide.style.setProperty("--space", (i - moves) * (slideWidth + gap) + "px");
+  });
+  // stop controls till animation ends
+  prevBtn.onclick = null;
+  nextBtn.onclick = null;
+  setTimeout(() => {
+    prevBtn.onclick = moveBack;
+    nextBtn.onclick = moveForward;
+  }, 333);
+}
+function moveBack() {
+  moves--;
+  slide();
+  nextBtn.classList.remove("disabled");
+  if (moves <= 0) {
+    this.classList.add("disabled");
+  } else {
+    this.classList.remove("disabled");
+  }
+}
+function moveForward() {
+  moves++;
+  slide();
+  prevBtn.classList.remove("disabled");
+  if (moves >= slides.length - count) {
+    this.classList.add("disabled");
+  } else {
+    this.classList.remove("disabled");
+  }
+}
+prevBtn.onclick = moveBack;
+nextBtn.onclick = moveForward;
