@@ -29,6 +29,8 @@ body
   margin-inline: auto
   &:not(.no-spaces)
     padding: $s-5 0
+  &.fluid
+    max-width: 100rem
   &:not(.fluid)
     @include md-screens
       width: 48rem
@@ -48,7 +50,7 @@ body
   place-items: center
   padding-top: 7.5rem
   background-image: url("assets/images/banner.png")
-  background-attachment: Z
+  background-attachment: fixed
   background-size: cover
   background-repeat: no-repeat
   background-color: #0b1765
