@@ -9,6 +9,8 @@
 // 3. About
 // 4. Gallary
 // 5. Testimonials
+// 6. Last Interact
+// 7. Footer
 
 
 // ===============
@@ -23,7 +25,6 @@ body
   font-family: $f-ordinary
   color: $c-ordinary
   background-color: $bg-light
-  height: 5000px // Temp
 
 .container
   width: calc( 100% - $s-3 * 2 )
@@ -385,6 +386,86 @@ main .container .picture
 // ===============
 .testimonials
   blockquote
-    font-size: 3.5rem
     text-align: center
     font-family: cursive, sans-serif
+    font-size: 2rem
+    white-space: balance
+    @include md-screens
+      font-size: 2.5rem
+    @include lg-screens
+      font-size: 3rem
+    
+// ================
+// 6. Last Interact
+// ================
+.last-interact
+  background-image: url("assets/images/banner.png")
+  background-attachment: fixed
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  background-color: #0b1765
+  color: $c-contrast
+
+  .container
+    display: flex
+    align-items: center
+    flex-direction: column
+    gap: $s-5
+
+    p
+      font-size: 2rem
+      text-align: center
+
+    .btn
+      font-size: 1.5rem
+
+    @include md-screens
+      flex-direction: row
+      p
+        text-align: start
+        font-size: 2.5rem
+        flex-grow: 1
+        font-weight: 700
+
+      .btn
+        flex-shrink: 0
+        font-size: 2rem
+    
+    @include lg-screens
+      p
+        font-size: 3rem
+
+// =========
+// 7. Footer
+// =========
+footer
+  background-color: $c-ordinary
+  color: $c-contrast
+
+  .container
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: $s-3
+    @include md-screens
+      flex-direction: row
+      justify-content: space-between
+
+  .brand
+    max-width: 10rem
+
+  .pagination
+    flex-shrink: 0
+
+  ul
+    text-align: center
+    @include md-screens
+      display: flex
+      gap: $s-3
+
+  a
+    text-decoration: none
+    color: inherit
+    &:hover
+      color: $c-accent

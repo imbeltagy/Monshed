@@ -73,6 +73,14 @@ const contents = {
   "testimonials-headding-p": "What them sayed about us",
   "testimonials-quote":
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, aperiam veniam odit alias pariatur velit",
+  // Last Interact
+  "last-interact-p": "Don't forget to join our Digital Markteing course.",
+  "last-interact-btn": "Join Now",
+  // Footer
+  "footer-home": "Home",
+  "footer-about": "About",
+  "footer-gallary": "Gallary",
+  "footer-contact": "Contact",
 };
 
 const html = document.getElementsByTagName("html")[0],

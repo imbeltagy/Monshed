@@ -109,7 +109,27 @@ html(lang="ar", dir="rtl")
         blockquote
           q(data-name="testimonials-quote") هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص
 
-        
+    //- Last Interact Section
+    section.last-interact 
+      .container
+        p(data-name="last-interact-p") لا تنسى التسجيل لدورة التسويق الالكتروني الخاصة بنا
+        a.btn(href="wa.me/201027797554", data-name="last-interact-btn") اشترك الآن  
 
+    //- Footer
+    footer
+      .container
+        .col.brand 
+          img(src="assets/images/brand.svg", alt="Monshed")
+          .social
+        .col.pagination
+          ul
+            li 
+              a(href="#home", data-name="footer-home") الرئيسية
+            li 
+              a(href="#about", data-name="footer-about") عنا
+            li 
+              a(href="#gallary", data-name="footer-gallary") المعرض
+            li 
+              a(href="#contact", data-name="footer-contact") تواصل معنا
 
     script(src="app.js") 
