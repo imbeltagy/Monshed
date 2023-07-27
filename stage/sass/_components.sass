@@ -32,7 +32,8 @@
 // Sections headdings
 .headding
   width: fit-content
-  margin: 0 auto 3rem * 1.5
+  margin-inline: auto
+  padding-bottom: 3rem * 1.5
   text-align: center
 
   h2
@@ -58,6 +59,13 @@
     font-size: 1.2rem
     line-height: 0
     margin-top: .3em
+    text-transform: capitalize
+  
+  &.light
+    color: $c-contrast
+
+    h2::before 
+      background-color: $c-contrast
 
 [dir="ltr"] .headding
   h2
