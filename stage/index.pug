@@ -77,13 +77,13 @@ html(lang="ar", dir="rtl")
               span(data-name="card3-span1") المقر: طنطا، مصر
               span(data-name="card3-span2") تاريخ التأسيس: ++ - ++ - ++++
               span(data-name="card3-span3") مجال العمل: خدمات السوشيال ميديا
-            
-    //- Gallary Section
-    section#gallary.gallary
+
+    //- Testimonials Section
+    section#testimonials.testimonials.bg-dark
       .container.fluid
         .headding.light
-          h2(data-name="gallary-headding-h") المعرض
-          p(data-name="gallary-headding-p") تصفح بعض اعمالنا المميزة
+          h2(data-name="testimonials-headding-h") آراء العملاء
+          p(data-name="testimonials-headding-p") ما قاله عنا العملاء السابقون
         .slider 
           .img.none
           .img.red
@@ -97,17 +97,24 @@ html(lang="ar", dir="rtl")
           .img.blue
           .img.violet
         .slider-controls
-          button.prev.disabled(data-name="gallary-slider-prev") السابق
-          button.next(data-name="gallary-slider-next") التالي
-            
-    //- Testimonials Section
-    section.testimonials.bg-light
+          button.prev.disabled(data-name="testimonials-slider-prev") السابق
+          button.next(data-name="testimonials-slider-next") التالي
+                        
+    //- Gallary Section
+    section.gallary.bg-light
+      .container 
+        .headding.light
+          h2(data-name="gallary-headding-h") المعرض
+          p(data-name="gallary-headding-p") تصفح بعض اعمالنا المميزة
+
+    //- Feedback Section
+    //- section.feedback.bg-dark
       .container
         .headding 
-          h2(data-name="testimonials-headding-h") آراء العملاء
-          p(data-name="testimonials-headding-p") ما قاله عنا العملاء السابقون
+          h2(data-name="feedback-headding-h") آراء العملاء
+          p(data-name="feedback-headding-p") ما قاله عنا العملاء السابقون
         blockquote
-          q(data-name="testimonials-quote") هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص
+          q(data-name="feedback-quote") هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص
 
     //- Last Interact Section
     section.last-interact 

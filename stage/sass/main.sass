@@ -7,10 +7,11 @@
 // 1. Global Rules
 // 2. Hero
 // 3. About
-// 4. Gallary
-// 5. Testimonials
-// 6. Last Interact
-// 7. Footer
+// 4. Testimonials
+// 5. Gallary
+// 6. Feedback
+// 7. Last Interact
+// 8. Footer
 
 
 // ===============
@@ -25,6 +26,9 @@ body
   font-family: $f-ordinary
   color: $c-ordinary
   background-color: $bg-light
+.bg-dark
+  background-color: $c-ordinary
+  color: $c-contrast
 
 .container
   width: calc( 100% - $s-3 * 2 )
@@ -311,13 +315,10 @@ main .container .picture
       padding-top: .4rem
       font-weight: bold
 
-// ==========
-// 4. Gallary
-// ==========
-.gallary
-  background-color: $c-ordinary
-  color: $c-contrast
-
+// ===============
+// 4. Testimonials
+// ===============
+.testimonials
   .slider
     --images-count: 1
     gap: $s-3
@@ -377,14 +378,18 @@ main .container .picture
       &:not(:focus) 
         outline: none
 
-[dir="ltr"] .gallary .img
+[dir="ltr"] .testimonials .img
   right: auto
   left: var(--space)
 
-// ===============
-// 5. Testimonials
-// ===============
-.testimonials
+// ==========
+// 5. Gallary
+// ==========
+
+// ===========
+// 6. Feedback
+// ===========
+// .feedback
   blockquote
     text-align: center
     font-family: cursive, sans-serif
@@ -396,7 +401,7 @@ main .container .picture
       font-size: 3rem
     
 // ================
-// 6. Last Interact
+// 7. Last Interact
 // ================
 .last-interact
   background-image: url("assets/images/banner.png")
@@ -437,7 +442,7 @@ main .container .picture
         font-size: 3rem
 
 // =========
-// 7. Footer
+// 8. Footer
 // =========
 footer
   background-color: $c-ordinary

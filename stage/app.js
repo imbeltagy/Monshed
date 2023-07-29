@@ -65,14 +65,17 @@ const contents = {
   "card3-span3": "Work Field: Social Media Services",
   // Gallary
   "gallary-headding-h": "Gallary",
-  "gallary-headding-p": "Some of our work",
-  "gallary-slider-prev": "prev",
-  "gallary-slider-next": "next",
+  "gallary-headding-p": "Some of Zaid certifications",
   // Testimonials
   "testimonials-headding-h": "Testimonials",
   "testimonials-headding-p": "What them sayed about us",
-  "testimonials-quote":
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, aperiam veniam odit alias pariatur velit",
+  "testimonials-slider-prev": "prev",
+  "testimonials-slider-next": "next",
+  // Feedback
+  /* "feedback-headding-h": "Feedback",
+  "feedback-headding-p": "What them sayed about us",
+  "feedback-quote":
+    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, aperiam veniam odit alias pariatur velit", */
   // Last Interact
   "last-interact-p": "Don't forget to join our Digital Markteing course.",
   "last-interact-btn": "Join Now",
@@ -124,7 +127,7 @@ window.onload = () => {
 };
 
 // Apply Slide On Gallary
-const slider = document.querySelector(".gallary .slider"),
+const slider = document.querySelector(".testimonials .slider"),
   slides = Array.from(slider.children);
 slides.shift(); // To Remove The First Image Which Is Unvisible
 
