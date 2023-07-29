@@ -31,6 +31,7 @@
 
 // Sections headdings
 .headding
+  position: relative
   width: fit-content
   margin-inline: auto
   margin-bottom: 3rem * 1.5
@@ -39,34 +40,34 @@
   h2
     width: fit-content
     font-family: $f-special
-    font-size: 3rem
+    font-size: min(3rem, 8vw)
     text-transform: uppercase
     margin: 0 auto
 
   p
-    position: relative
-    width: fit-content
-    margin-inline: auto
+    position: absolute
+    top: 90%
+    left: 50%
+    transform: translateX(-50%)
+    width: max-content
     font-size: 1.2rem
     line-height: 1
     text-transform: capitalize
-    margin-top: -.25em
 
     &::before
       content: ""
       position: absolute
       bottom: -.5em
-      left: 50%
-      transform: translateX(-50%)
-      width: 100%
+      left: 0
       height: .15rem
+      width: 100%
       border-radius: 1rem
       background-color: $c-ordinary
   
   &.light
     color: $c-contrast
 
-    h2::before 
+    p::before 
       background-color: $c-contrast
 
 [dir="ltr"] .headding
@@ -74,6 +75,5 @@
     letter-spacing: .1em
   p
     letter-spacing: .2em
-    margin-top: -.8em
     &::before
-      bottom: -.15em
+      bottom: -.3em
