@@ -8,7 +8,7 @@ document.getElementById("nav-icon").onclick = function () {
 const navbar = document.querySelector(".navbar"),
   margintop = parseFloat(getComputedStyle(navbar).getPropertyValue("margin-top")),
   sections = Array.from(document.getElementsByTagName("section"));
-window.onscroll = () => {
+window.addEventListener("scroll", () => {
   if (scrollY >= margintop) {
     navbar.classList.add("fixed");
   } else {
@@ -26,7 +26,7 @@ window.onscroll = () => {
       }
     }
   });
-};
+});
 // Switch Languages
 const contents = {
   // Nav
@@ -125,14 +125,15 @@ switcher.onclick = () => {
   localStorage.setItem("dir", dir);
   toggleContent();
 };
-window.onload = () => {
+window.addEventListener("load", () => {
   dir = localStorage.getItem("dir") || html.dir;
+  console.log(dir);
   if (dir === "ltr") {
     toggleContent();
   }
-};
+});
 
-// Apply Slide On Gallary
+// Apply Slide On Testimonials
 const slider = document.querySelector(".testimonials .slider"),
   slides = Array.from(slider.children);
 slides.shift(); // To Remove The First Image Which Is Unvisible
@@ -160,8 +161,8 @@ function resizeSlides() {
   slide();
 }
 
-window.onload = resizeSlides;
-window.onresize = resizeSlides;
+window.addEventListener("load", resizeSlides);
+window.addEventListener("resize", resizeSlides);
 
 // Add Event To Move Slides
 const prevBtn = document.querySelector(".slider-controls .prev"),
