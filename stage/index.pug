@@ -30,9 +30,9 @@ html(lang="ar", dir="rtl")
             li 
               a(href="#about", data-name="nav-about") عنا
             li 
-              a(href="#gallary", data-name="nav-gallary") المعرض
+              a(href="#testimonials", data-name="nav-testimonials") آراء العملاء
             li 
-              a(href="#contact", data-name="nav-contact") تواصل معنا
+              a(href="#certifications", data-name="nav-gallary") الشهادات
             li#lang-switcher
               img(src="assets/images/flags/en.svg", data-alt="assets/images/flags/ar.svg" alt="Change Language", title="Change Language")
       main
@@ -100,12 +100,37 @@ html(lang="ar", dir="rtl")
           button.prev.disabled(data-name="testimonials-slider-prev") السابق
           button.next(data-name="testimonials-slider-next") التالي
                         
-    //- Gallary Section
-    section.gallary.bg-light
+    //- Certifications Section
+    section#certifications.certifications.bg-light
       .container 
-        .headding.light
-          h2(data-name="gallary-headding-h") المعرض
-          p(data-name="gallary-headding-p") تصفح بعض اعمالنا المميزة
+        .headding
+          h2(data-name="certifications-headding-h") الشهادات
+          p(data-name="certifications-headding-p") بعض الشهادات التي حصل عليها زيد
+
+        .images-container 
+          .img-container(tabindex="0")
+            img(src="https://picsum.photos/600/400", alt="Zaid Certification")
+            p(data-name="certification-1") شهادة في كذا
+
+          .img-container(tabindex="0")
+            img(src="https://picsum.photos/600/400", alt="Zaid Certification")
+            p(data-name="certification-2") شهادة في كذا
+
+          .img-container(tabindex="0")
+            img(src="https://picsum.photos/600/400", alt="Zaid Certification")
+            p(data-name="certification-3") شهادة في كذا
+
+          .img-container(tabindex="0")
+            img(src="https://picsum.photos/600/400", alt="Zaid Certification")
+            p(data-name="certification-4") شهادة في كذا
+
+          .img-container(tabindex="0")
+            img(src="https://picsum.photos/600/400", alt="Zaid Certification")
+            p(data-name="certification-5") شهادة في كذا
+
+          .img-container(tabindex="0")
+            img(src="https://picsum.photos/600/400", alt="Zaid Certification")
+            p(data-name="certification-6") شهادة في كذا
 
     //- Feedback Section
     //- section.feedback.bg-dark

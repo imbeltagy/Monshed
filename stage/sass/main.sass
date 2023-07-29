@@ -8,7 +8,7 @@
 // 2. Hero
 // 3. About
 // 4. Testimonials
-// 5. Gallary
+// 5. Certifications
 // 6. Feedback
 // 7. Last Interact
 // 8. Footer
@@ -26,6 +26,7 @@ body
   font-family: $f-ordinary
   color: $c-ordinary
   background-color: $bg-light
+
 .bg-dark
   background-color: $c-ordinary
   color: $c-contrast
@@ -382,9 +383,38 @@ main .container .picture
   right: auto
   left: var(--space)
 
-// ==========
-// 5. Gallary
-// ==========
+// =================
+// 5. Certifications
+// =================
+.certifications .images-container
+  display: grid
+  gap: $s-3
+  grid-template-columns: auto
+  @include md-screens
+    grid-template-columns: repeat(2, 1fr)
+  @include lg-screens
+    grid-template-columns: repeat(3, 1fr)
+
+  .img-container
+    overflow: hidden
+    position: relative
+
+    img
+      width: 100%
+      transition: transform $md-trans
+    &:where(:hover, :focus) img
+        transform: scale(1.2)
+      
+    p
+      position: absolute
+      background: $c-contrast
+      color: $c-ordinary
+      width: 100%
+      padding: $s-3
+      top: 100%
+      transition: transform $md-trans
+    &:where(:hover, :focus) p
+      transform: translateY(-100%)
 
 // ===========
 // 6. Feedback

@@ -32,8 +32,8 @@ const contents = {
   // Nav
   "nav-home": "Home",
   "nav-about": "About",
+  "nav-testimonials": "Testimonials",
   "nav-gallary": "Gallary",
-  "nav-contact": "Contact",
   // Main
   "main-welcome": "Hello, we are Monshed Company. We specialize in",
   "main-title": "Social Media and Digital Marketing Services",
@@ -63,9 +63,15 @@ const contents = {
   "card3-span1": "Based In: Tanta, Egypt",
   "card3-span2": "Stablish Date: xx - xx - xxxx",
   "card3-span3": "Work Field: Social Media Services",
-  // Gallary
-  "gallary-headding-h": "Gallary",
-  "gallary-headding-p": "Some of Zaid certifications",
+  // Certifications
+  "certifications-headding-h": "Certifications",
+  "certifications-headding-p": "Some of Zaid certifications",
+  "certification-1": "certification in something",
+  "certification-2": "certification in something",
+  "certification-3": "certification in something",
+  "certification-4": "certification in something",
+  "certification-5": "certification in something",
+  "certification-6": "certification in something",
   // Testimonials
   "testimonials-headding-h": "Testimonials",
   "testimonials-headding-p": "What them sayed about us",
