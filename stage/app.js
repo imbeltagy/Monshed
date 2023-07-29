@@ -33,7 +33,7 @@ const contents = {
   "nav-home": "Home",
   "nav-about": "About",
   "nav-testimonials": "Testimonials",
-  "nav-gallary": "Gallary",
+  "nav-certifications": "Certifications",
   // Main
   "main-welcome": "Hello, we are Monshed Company. We specialize in",
   "main-title": "Social Media and Digital Marketing Services",
@@ -41,7 +41,7 @@ const contents = {
   "main-link": "Book Now!",
   // About
   "about-headding-h": "About Us",
-  "about-headding-p": "What Monshed is and what it provides.",
+  "about-headding-p": "All you need to know about us.",
   // -- card 1
   "card1-h": "Monshed Company",
   "card1-p":
@@ -63,20 +63,20 @@ const contents = {
   "card3-span1": "Based In: Tanta, Egypt",
   "card3-span2": "Stablish Date: xx - xx - xxxx",
   "card3-span3": "Work Field: Social Media Services",
+  // Testimonials
+  "testimonials-headding-h": "Testimonials",
+  "testimonials-headding-p": "What them sayed about us.",
+  "testimonials-slider-prev": "prev",
+  "testimonials-slider-next": "next",
   // Certifications
   "certifications-headding-h": "Certifications",
-  "certifications-headding-p": "Some of Zaid certifications",
+  "certifications-headding-p": "Some of Zaid certifications.",
   "certification-1": "certification in something",
   "certification-2": "certification in something",
   "certification-3": "certification in something",
   "certification-4": "certification in something",
   "certification-5": "certification in something",
   "certification-6": "certification in something",
-  // Testimonials
-  "testimonials-headding-h": "Testimonials",
-  "testimonials-headding-p": "What them sayed about us",
-  "testimonials-slider-prev": "prev",
-  "testimonials-slider-next": "next",
   // Feedback
   /* "feedback-headding-h": "Feedback",
   "feedback-headding-p": "What them sayed about us",
@@ -88,8 +88,8 @@ const contents = {
   // Footer
   "footer-home": "Home",
   "footer-about": "About",
-  "footer-gallary": "Gallary",
-  "footer-contact": "Contact",
+  "footer-testimonials": "Testimonials",
+  "footer-certifications": "Certifications",
 };
 
 const html = document.getElementsByTagName("html")[0],
