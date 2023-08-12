@@ -16,17 +16,19 @@ gulp.task("compile-sass", () =>
     .src("./stage/sass/main.sass")
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(autoprefixer("last 2 versions"))
-    .pipe(gulp.dest("./docs/"))
+    .pipe(gulp.dest("./docs/assets/css/"))
     .pipe(connect.reload())
 );
 
-// Redirect JS Files
+// Redirect JS
 gulp.task("redirect-js", () =>
-  gulp.src("./stage/app.js").pipe(uglify()).pipe(gulp.dest("./docs/")).pipe(connect.reload())
+  gulp.src("./stage/assets/**/*.js").pipe(uglify()).pipe(gulp.dest("./docs/assets/")).pipe(connect.reload())
 );
 
-// Redirect Images
-gulp.task("redirect-assets", () => gulp.src("./stage/assets/**").pipe(gulp.dest("./docs/assets/")));
+// Redirect Assets
+gulp.task("redirect-assets", () =>
+  gulp.src(["./stage/assets/*", "!./stage/assets/**/*.js"]).pipe(gulp.dest("./docs/assets/")).pipe(connect.reload())
+);
 
 // Start Server & Watch Changes
 gulp.task("default", () => {
@@ -34,7 +36,8 @@ gulp.task("default", () => {
     root: "./docs/",
     livereload: true,
   });
-  gulp.watch("./stage/**/*.pug", gulp.series(["compile-pug", "redirect-assets"]));
+  gulp.watch("./stage/**/*.pug", gulp.series("compile-pug"));
   gulp.watch("./stage/**/*.sass", gulp.series("compile-sass"));
-  gulp.watch("./stage/**/*.js", gulp.series("redirect-js"));
+  gulp.watch("./stage/assets/**/*.js", gulp.series("redirect-js"));
+  gulp.watch(["./stage/assets/*", "!./stage/assets/**/*.js"], gulp.series("redirect-assets"));
 });

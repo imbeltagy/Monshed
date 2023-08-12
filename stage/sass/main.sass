@@ -311,10 +311,25 @@ main .container .picture
       font-size: 1.4rem
       line-height: 2
 
-    span
-      display: block
-      padding-top: .4rem
-      font-weight: bold
+    p
+      margin-top: 1rem
+    
+    a
+      color: inherit
+      text-decoration: none
+      margin-top: 1rem
+      display: flex
+      align-items: center
+      gap: .5rem
+
+      &:hover
+        color: $c-accent
+    
+    h4
+      padding: 1rem 0  .5rem
+    
+    li:not(:last-child)
+      margin-bottom: .5rem
 
 // ===============
 // 4. Testimonials
@@ -446,22 +461,29 @@ main .container .picture
     display: flex
     align-items: center
     flex-direction: column
-    gap: $s-5
+    gap: $s-3
 
-    p
-      font-size: 2rem
+    .text
+      font-size: 1rem
       text-align: center
+      p:first-child
+        font-size: 2em
+      p:last-child
+        font-size: 1em
+        opacity: .9
 
     .btn
       font-size: 1.5rem
 
     @include md-screens
       flex-direction: row
-      p
+
+      .text
+        font-size: 1.25rem
         text-align: start
-        font-size: 2.5rem
         flex-grow: 1
-        font-weight: 700
+        p:first-child
+          font-weight: 700
 
       .btn
         flex-shrink: 0

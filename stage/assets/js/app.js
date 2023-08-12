@@ -43,26 +43,44 @@ const contents = {
   "about-headding-h": "About Us",
   "about-headding-p": "All you need to know about us.",
   // -- card 1
-  "card1-h": "Monshed Company",
-  "card1-p":
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum alias ea officiis distinctio totam perferendis porro voluptas hic delectus suscipit.",
-  "card1-span1": "Based In: Tanta, Egypt",
-  "card1-span2": "Stablish Date: xx - xx - xxxx",
-  "card1-span3": "Work Field: Social Media Services",
+  "card1-h": "Zaid Osama",
+  "card1-p1":
+    "Hello, I'm Zaid Osama Azab, an electronic marketer based in Egypt. I have over 8 years of experience in management and marketing. I'm the founder of Manshad Company, where I have developed marketing strategies and achieved success in advertising campaigns and promoting products and services.",
+  "card1-p2":
+    "I have obtained training certificates in the field of marketing from recognized institutes in Saudi Arabia and Egypt, including Al-Qadisiyah Business Institute. I have kept myself updated and stayed current with the latest developments in digital marketing.",
+  "card1-p3":
+    "Currently, I work as an independent digital marketer and have executed successful campaigns for multiple clients. I possess the ability to analyze data and utilize it to identify marketing opportunities and enhance performance overall.",
+  "card1-p4":
+    "I'm delighted to assist you in achieving your marketing goals and improving your digital presence. Feel free to get in touch with me to discuss how I can help you achieve digital success.",
+  "card1-contact-text": "Contact Link",
   // -- card 2
-  "card2-h": "Zaid Osama",
-  "card2-p":
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum alias ea officiis distinctio totam perferendis porro voluptas hic delectus suscipit.",
-  "card2-span1": "Based In: Tanta, Egypt",
-  "card2-span2": "Work Field: Digital Marketing",
-  "card2-span3": "Work Experience: +x yr",
+  "card2-h": "Monshed Company",
+  "card2-p1":
+    "Manashad Company is a leading player in the field of digital marketing and visual production, established in 2019. We strive to provide top-notch services in the realm of modern advertising and marketing. Despite not having a physical office currently, our aspirations and efforts know no bounds.",
+  "card2-p2":
+    "At Manashad, we are committed to keeping pace with technological advancements and the challenges of our times. This enables us to offer strategic marketing services for your products and services in innovative and engaging ways. Our experience includes collaboration with major companies and brands, equipping us with the expertise and knowledge necessary to meet your requirements efficiently and professionally.",
+  "card2-p3":
+    "We offer a wide range of services, including digital marketing across social media platforms, graphic design and promotional materials, and video production adhering to the highest standards of quality and innovation. Our team consists of qualified and professional experts in various fields, and we are confident in our ability to effectively achieve your marketing goals.",
+  "card2-p4":
+    "We prioritize delivering an exceptional customer experience and hold your satisfaction as our utmost priority. If you're in search of a reliable and creative partner to enhance your digital presence and achieve success, the Manashad Company team is ready to collaborate with you, working together to achieve remarkable results. Contact us now to kickstart our joint efforts toward exceptional success.",
+  "card2-contact-text": "Contact Link",
   // -- card 3
-  "card3-h": "Monshed Company",
-  "card3-p":
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum alias ea officiis distinctio totam perferendis porro voluptas hic delectus suscipit.",
-  "card3-span1": "Based In: Tanta, Egypt",
-  "card3-span2": "Stablish Date: xx - xx - xxxx",
-  "card3-span3": "Work Field: Social Media Services",
+  "card3-h": "Digital Marketing Course",
+  "card3-p1":
+    "The Excellence in Marketing Training Course aims to enhance your skills in the world of digital marketing and achieve success in the realm of online business. Whether you're looking to increase your sales, improve your income, or build your own business from scratch, this course caters to your needs.",
+  "card3-list-headding": "In this training course, you will learn:",
+  "card3-li1": "The art of copywriting: How to effectively use words to attract and engage customers.",
+  "card3-li2":
+    "Creating a successful project from scratch: You will become acquainted with successful management strategies to ensure the success of your project.",
+  "card3-li3":
+    "The importance of design in marketing: How to use attractive design to capture customers' attention and enhance their experience.",
+  "card3-li4":
+    "Digital marketing: You will learn how to create effective advertisements on social media platforms like Facebook and Instagram, and target the right audience properly.",
+  "card3-li5":
+    "Obtaining a certified certificate: You will receive a certified certificate from Manshad Company that verifies your skills and knowledge in the field of digital marketing.",
+  "card3-p2":
+    "In our course, we prioritize engaging with participants and implementing practical activities after each lecture to enhance learning. We also provide technical support throughout the day to assist in resolving any inquiries.",
+  "card3-contact-text": "Course Registration Link",
   // Testimonials
   "testimonials-headding-h": "Testimonials",
   "testimonials-headding-p": "What them sayed about us.",
@@ -83,7 +101,8 @@ const contents = {
   "feedback-quote":
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, aperiam veniam odit alias pariatur velit", */
   // Last Interact
-  "last-interact-p": "Don't forget to join our Digital Markteing course.",
+  "last-interact-text": "Don't forget to join our Digital Markteing course.",
+  "last-interact-deal": "Special discount for the first ten trainees in each course.",
   "last-interact-btn": "Join Now",
   // Footer
   "footer-home": "Home",
