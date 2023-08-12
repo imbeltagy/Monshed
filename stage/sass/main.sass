@@ -287,9 +287,9 @@ main .container .picture
 .about .cards
   display: grid
   gap: $s-3
-  @include sm-screens
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr))
   @include md-screens
+    grid-template-columns: 1fr 1fr
+  @include lg-screens
     grid-template-columns: 1fr 1fr 1fr
 
   .card
