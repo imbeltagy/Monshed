@@ -146,7 +146,6 @@ switcher.onclick = () => {
 };
 window.addEventListener("load", () => {
   dir = localStorage.getItem("dir") || html.dir;
-  console.log(dir);
   if (dir === "ltr") {
     toggleContent();
   }
