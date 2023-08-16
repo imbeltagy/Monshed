@@ -143,6 +143,8 @@ switcher.onclick = () => {
   }
   localStorage.setItem("dir", dir);
   toggleContent();
+  // Resize Card on Testimonials
+  resizeSlides();
 };
 window.addEventListener("load", () => {
   dir = localStorage.getItem("dir") || html.dir;
@@ -153,28 +155,37 @@ window.addEventListener("load", () => {
 
 // Apply Slide On Testimonials
 const slider = document.querySelector(".testimonials .slider"),
-  slides = Array.from(slider.children);
-slides.shift(); // To Remove The First Image Which Is Unvisible
+  cards = Array.from(slider.children);
 
 // Get width, gaps, images count
 let count = parseInt(getComputedStyle(slider).getPropertyValue("--images-count")),
   gap = parseFloat(getComputedStyle(slider).getPropertyValue("gap")),
   sliderWidth = parseFloat(getComputedStyle(slider).getPropertyValue("width"));
-let slideWidth = (sliderWidth - gap * (count - 1)) / count;
+let cardWidth = (sliderWidth - gap * (count - 1)) / count;
 
 function resizeSlides() {
   count = parseInt(getComputedStyle(slider).getPropertyValue("--images-count"));
   gap = parseFloat(getComputedStyle(slider).getPropertyValue("gap"));
   sliderWidth = parseFloat(getComputedStyle(slider).getPropertyValue("width"));
 
-  slideWidth = (sliderWidth - gap * (count - 1)) / count;
+  cardWidth = (sliderWidth - gap * (count - 1)) / count;
 
   // set width for visible images
-  slides.forEach((slide, i) => {
-    slide.style.width = slideWidth + "px";
+  cards.forEach((card) => {
+    card.style.width = cardWidth + "px";
   });
-  // set width for the unvisible one
-  slider.firstElementChild.style.width = slideWidth + "px";
+
+  slider.style.height = null; // reset value when changing content
+  // the height of the heigher card
+  let height =
+    cards.reduce((acc, cur) => {
+      let h = parseFloat(getComputedStyle(cur).getPropertyValue("height"));
+      if (isNaN(acc)) {
+        acc = parseFloat(getComputedStyle(acc).getPropertyValue("height"));
+      }
+      return h > acc ? h : acc;
+    }) + "px";
+  slider.style.height = height;
   // Move Images
   slide();
 }
@@ -185,10 +196,12 @@ window.addEventListener("resize", resizeSlides);
 // Add Event To Move Slides
 const prevBtn = document.querySelector(".slider-controls .prev"),
   nextBtn = document.querySelector(".slider-controls .next");
+
 let moves = 0;
+
 function slide() {
-  slides.forEach((slide, i) => {
-    slide.style.setProperty("--space", (i - moves) * (slideWidth + gap) + "px");
+  cards.forEach((card, i) => {
+    card.style.setProperty("--space", (i - moves) * (cardWidth + gap) + "px");
   });
   // stop controls till animation ends
   prevBtn.onclick = null;
@@ -198,6 +211,7 @@ function slide() {
     nextBtn.onclick = moveForward;
   }, 333);
 }
+
 function moveBack() {
   moves--;
   slide();
@@ -208,15 +222,17 @@ function moveBack() {
     this.classList.remove("disabled");
   }
 }
+
 function moveForward() {
   moves++;
   slide();
   prevBtn.classList.remove("disabled");
-  if (moves >= slides.length - count) {
+  if (moves >= cards.length - count) {
     this.classList.add("disabled");
   } else {
     this.classList.remove("disabled");
   }
 }
+
 prevBtn.onclick = moveBack;
 nextBtn.onclick = moveForward;

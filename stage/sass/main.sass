@@ -341,33 +341,59 @@ main .container .picture
     position: relative 
     overflow: hidden
     @include md-screens
-      --images-count: 3
+      --images-count: 2
     @include lg-screens
-      --images-count: 5
+      --images-count: 3
 
-  .img
+  .card
     --space: 0
     position: absolute
     left: auto
     right: var(--space)
     top: 0
-    aspect-ratio: 4 / 3
-    width: 100%
+    min-height: 100% // will be effective after giving the parent a height using js
+    background-color: $bg-light
+    color: rgb($c-ordinary, 80%)
+    padding: $s-3
     transition: inset $fast-trans
-    &.none
-      position: static
-      visibility: none
-      pointer-events: none
-    &.blue
-      background-color: #1982c4
-    &.violet
-      background-color: #6a4c93
-    &.red
-      background-color: #ff595e
-    &.green
-      background-color: #8ac926
-    &.yellow
-      background-color: #ffca3a
+    display: grid
+    grid-template-rows: auto 1fr
+    align-items: center
+
+    .name
+      display: block
+      font-size: 1.1rem
+    .en
+      display: none
+
+    blockquote
+      position: relative
+      color: $c-ordinary
+      font-weight: 900
+      font-size: 1.2rem
+      text-align: center
+      margin: $s-2 0
+
+      q::before
+        font-size: 1.8rem
+        position: absolute
+        right: 0
+        top: -.333rem
+      q::after
+        font-size: 1.5rem
+        position: absolute
+        left: 0
+        bottom: -.333rem
+
+    // p 
+    //   position: relative
+    //   &:first-letter
+    //     padding-left: $s-3
+    //   &:before
+    //     content: ""
+    //     position: absolute
+    //     height: 1px;
+    //     background-color: rgb($c-ordinary, 80%)
   
   .slider-controls
     display: flex
@@ -394,9 +420,18 @@ main .container .picture
       &:not(:focus) 
         outline: none
 
-[dir="ltr"] .testimonials .img
-  right: auto
-  left: var(--space)
+[dir="ltr"] .testimonials
+  .card
+    right: auto
+    left: var(--space)
+    display: flex
+    align-items: start
+    flex-direction: column
+    justify-content: space-between
+    .ar
+      display: none
+    .en
+      display: block
 
 // =================
 // 5. Certifications
@@ -449,7 +484,7 @@ main .container .picture
 // 7. Last Interact
 // ================
 .last-interact
-  background-image: url("assets/images/banner.png")
+  background-image: url("../images/banner.png")
   background-attachment: fixed
   background-size: cover
   background-position: center
