@@ -27,7 +27,10 @@ gulp.task("redirect-js", () =>
 
 // Redirect Assets
 gulp.task("redirect-assets", () =>
-  gulp.src(["./stage/assets/*", "!./stage/assets/**/*.js"]).pipe(gulp.dest("./docs/assets/")).pipe(connect.reload())
+  gulp
+    .src(["./stage/assets/**/*.*", "!./stage/assets/**/*.js"])
+    .pipe(gulp.dest("./docs/assets/"))
+    .pipe(connect.reload())
 );
 
 // Start Server & Watch Changes
@@ -39,5 +42,5 @@ gulp.task("default", () => {
   gulp.watch("./stage/**/*.pug", gulp.series("compile-pug"));
   gulp.watch("./stage/**/*.sass", gulp.series("compile-sass"));
   gulp.watch("./stage/assets/**/*.js", gulp.series("redirect-js"));
-  gulp.watch(["./stage/assets/*", "!./stage/assets/**/*.js"], gulp.series("redirect-assets"));
+  gulp.watch(["./stage/assets", "!./stage/assets/**/*.js"], gulp.series("redirect-assets"));
 });
