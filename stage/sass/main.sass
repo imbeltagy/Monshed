@@ -56,11 +56,17 @@ body
   display: grid
   place-items: center
   padding-top: 7.5rem
-  background-image: url("../images/hero/hero-bg.jpeg")
+  background-image: url("../images/hero/hero-bg-2.png")
   background-position: right top
   background-size: cover
   background-repeat: no-repeat
   background-color: #0b1765
+
+  .picture
+    position: absolute
+    bottom: 0
+    inset-inline-start: 0
+    width: 10%
 
 // Nav Bar
 .navbar
@@ -434,35 +440,51 @@ main .container .picture
 // =================
 // 5. Certifications
 // =================
-.certifications .images-container
-  display: grid
+.certifications .boxes
   gap: $s-3
-  grid-template-columns: auto
+  columns: 1
   @include md-screens
-    grid-template-columns: repeat(2, 1fr)
+    columns: 2
   @include lg-screens
-    grid-template-columns: repeat(3, 1fr)
+    columns: 3
 
-  .img-container
+  .box
+    width: 100%
+    border-radius: 1rem
     overflow: hidden
-    position: relative
-
-    img
-      width: 100%
-      transition: transform $md-trans
-    &:where(:hover, :focus) img
-        transform: scale(1.2)
-      
-    p
-      position: absolute
-      background: $c-contrast
-      color: $c-ordinary
-      width: 100%
+    margin-bottom: $s-3
+    background-color: #9799c9
+    color: #fff
+    
+    &:not(:has(> .box__img))
       padding: $s-3
-      top: 100%
-      transition: transform $md-trans
-    &:where(:hover, :focus) p
-      transform: translateY(-100%)
+    
+    .box__img
+      width: 100%
+    
+    p:not(:last-child)
+      margin-bottom: $s-3
+
+  // .img-container
+  //   overflow: hidden
+  //   position: relative
+
+  //   img
+  //     width: 100%
+  //     transition: transform $md-trans
+  //   &:where(:hover, :focus) img
+  //       transform: scale(1.2)
+      
+  //   p
+  //     position: absolute
+  //     background: $c-contrast
+  //     color: $c-ordinary
+  //     width: 100%
+  //     padding: $s-3
+  //     top: 100%
+  //     transition: transform $md-trans
+  //   &:where(:hover, :focus) p
+  //     transform: translateY(-100%)
 
 // ===========
 // 6. Feedback
