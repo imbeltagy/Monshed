@@ -102,7 +102,7 @@ const contents = {
   "footer-home": "Home",
   "footer-about": "About",
   "footer-testimonials": "Testimonials",
-  "footer-certifications": "Certifications",
+  "footer-implementations": "Implementations",
 };
 
 const html = document.getElementsByTagName("html")[0],
