@@ -84,8 +84,6 @@ const contents = {
   // Testimonials
   "testimonials-headding-h": "Testimonials",
   "testimonials-headding-p": "What them sayed about us.",
-  "testimonials-slider-prev": "prev",
-  "testimonials-slider-next": "next",
   // Implementations
   "implementations-headding-h": "Students Implementations",
   "implementations-headding-p": "Some of our students implementations on Digital Marketing Course",
