@@ -56,17 +56,11 @@ body
   display: grid
   place-items: center
   padding-top: 7.5rem
-  background-image: url("../images/hero/hero-bg-2.png")
+  background-image: url("../images/hero/hero-bg.png")
   background-position: right top
   background-size: cover
   background-repeat: no-repeat
   background-color: #0b1765
-
-  .picture
-    position: absolute
-    bottom: 0
-    inset-inline-start: 0
-    width: 10%
 
 // Nav Bar
 .navbar
@@ -223,6 +217,7 @@ body
 
 // Main
 main .container
+  text-align: center
   height: 100%
   display: flex
   flex-direction: column-reverse
@@ -264,28 +259,18 @@ main .container
 [dir="ltr"] h1
   letter-spacing: .05em
 
-main .container .picture
-  position: relative
-  flex-shrink: 0
-  @include md-screens
-    width: 25rem
-  @include lg-screens
-    width: 30rem
-  &::before
-    content:""
-    position: absolute
-    width: 53%
-    height: 72%
-    left: 23%
-    top: 3%
-    border-radius: .6rem
-    box-shadow: 0 0 0 1rem rgba($c-accent, 0.5), 0 0 0 2rem rgba($c-accent, 0.2)
-    background-color: $c-accent
+main
+  .container .picture
+    flex-shrink: 0
+    @include md-screens
+      max-width: 22rem
+    @include lg-screens
+      max-width: 30rem
 
-  img
-    width: 100%
-    position: relative
-    border-radius: 1rem
+    img
+      width: 100%
+[dir="rtl"] main .picture img
+  transform: scaleX(-1)
 
 // ========
 // 3. About
