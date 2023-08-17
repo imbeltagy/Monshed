@@ -33,7 +33,7 @@ const contents = {
   "nav-home": "Home",
   "nav-about": "About",
   "nav-testimonials": "Testimonials",
-  "nav-certifications": "Certifications",
+  "nav-implementations": "Implementations",
   // Main
   "main-welcome": "Hello, we are Monshed Company. We specialize in",
   "main-title": "Social Media and Digital Marketing Services",
@@ -86,15 +86,9 @@ const contents = {
   "testimonials-headding-p": "What them sayed about us.",
   "testimonials-slider-prev": "prev",
   "testimonials-slider-next": "next",
-  // Certifications
-  "certifications-headding-h": "Certifications",
-  "certifications-headding-p": "Some of Zaid certifications.",
-  "certification-1": "certification in something",
-  "certification-2": "certification in something",
-  "certification-3": "certification in something",
-  "certification-4": "certification in something",
-  "certification-5": "certification in something",
-  "certification-6": "certification in something",
+  // Implementations
+  "implementations-headding-h": "Students Implementations",
+  "implementations-headding-p": "Some of our students implementations on Digital Marketing Course",
   // Feedback
   /* "feedback-headding-h": "Feedback",
   "feedback-headding-p": "What them sayed about us",
