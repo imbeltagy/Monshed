@@ -9,9 +9,8 @@
 // 3. About
 // 4. Testimonials
 // 5. Implementations
-// 6. Feedback
-// 7. Last Interact
-// 8. Footer
+// 6. Last Interact
+// 7. Footer
 
 
 // ===============
@@ -301,24 +300,22 @@ main
       line-height: 2
 
     p
-      margin-top: 1rem
+      margin-top: $s-3
     
     a
+      display: block
       color: inherit
       text-decoration: none
-      margin-top: 1rem
-      display: flex
-      align-items: center
-      gap: .5rem
+      margin-top: $s-3
 
       &:hover
         color: $c-accent
     
     h4
-      padding: 1rem 0  .5rem
+      padding: $s-3 0  $s-2
     
     li:not(:last-child)
-      margin-bottom: .5rem
+      margin-bottom: $s-2
 
 // ===============
 // 4. Testimonials
@@ -373,16 +370,6 @@ main
         position: absolute
         left: 0
         bottom: -.333rem
-
-    // p 
-    //   position: relative
-    //   &:first-letter
-    //     padding-left: $s-3
-    //   &:before
-    //     content: ""
-    //     position: absolute
-    //     height: 1px;
-    //     background-color: rgb($c-ordinary, 80%)
   
   .slider-controls
     display: flex
@@ -449,44 +436,9 @@ main
     
     p:not(:last-child)
       margin-bottom: $s-3
-
-  // .img-container
-  //   overflow: hidden
-  //   position: relative
-
-  //   img
-  //     width: 100%
-  //     transition: transform $md-trans
-  //   &:where(:hover, :focus) img
-  //       transform: scale(1.2)
-      
-  //   p
-  //     position: absolute
-  //     background: $c-contrast
-  //     color: $c-ordinary
-  //     width: 100%
-  //     padding: $s-3
-  //     top: 100%
-  //     transition: transform $md-trans
-  //   &:where(:hover, :focus) p
-  //     transform: translateY(-100%)
-
-// ===========
-// 6. Feedback
-// ===========
-// .feedback
-  blockquote
-    text-align: center
-    font-family: cursive, sans-serif
-    font-size: 2rem
-    white-space: balance
-    @include md-screens
-      font-size: 2.5rem
-    @include lg-screens
-      font-size: 3rem
     
 // ================
-// 7. Last Interact
+// 6. Last Interact
 // ================
 .last-interact
   background-image: url("../images/banner.png")
@@ -534,7 +486,7 @@ main
         font-size: 3rem
 
 // =========
-// 8. Footer
+// 7. Footer
 // =========
 footer
   background-color: $c-ordinary

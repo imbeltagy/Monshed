@@ -52,7 +52,7 @@ const contents = {
     "Currently, I work as an independent digital marketer and have executed successful campaigns for multiple clients. I possess the ability to analyze data and utilize it to identify marketing opportunities and enhance performance overall.",
   "card1-p4":
     "I'm delighted to assist you in achieving your marketing goals and improving your digital presence. Feel free to get in touch with me to discuss how I can help you achieve digital success.",
-  "card1-contact-text": "Contact Link",
+  "card1-contact-text": "🔗📧 Contact Link",
   // -- card 2
   "card2-h": "Monshed Company",
   "card2-p1":
@@ -63,7 +63,7 @@ const contents = {
     "We offer a wide range of services, including digital marketing across social media platforms, graphic design and promotional materials, and video production adhering to the highest standards of quality and innovation. Our team consists of qualified and professional experts in various fields, and we are confident in our ability to effectively achieve your marketing goals.",
   "card2-p4":
     "We prioritize delivering an exceptional customer experience and hold your satisfaction as our utmost priority. If you're in search of a reliable and creative partner to enhance your digital presence and achieve success, the Manashad Company team is ready to collaborate with you, working together to achieve remarkable results. Contact us now to kickstart our joint efforts toward exceptional success.",
-  "card2-contact-text": "Contact Link",
+  "card2-contact-text": "🔗📧 Contact Link",
   // -- card 3
   "card3-h": "Digital Marketing Course",
   "card3-p1":
@@ -80,7 +80,7 @@ const contents = {
     "Obtaining a certified certificate: You will receive a certified certificate from Manshad Company that verifies your skills and knowledge in the field of digital marketing.",
   "card3-p2":
     "In our course, we prioritize engaging with participants and implementing practical activities after each lecture to enhance learning. We also provide technical support throughout the day to assist in resolving any inquiries.",
-  "card3-contact-text": "Course Registration Link",
+  "card3-contact-text": "🔗📧 Course Registration Link",
   // Testimonials
   "testimonials-headding-h": "Testimonials",
   "testimonials-headding-p": "What them sayed about us.",
