@@ -145,86 +145,85 @@ window.addEventListener("load", () => {
   }
 });
 
-// Apply Slide On Testimonials
-const slider = document.querySelector(".testimonials .slider"),
-  cards = Array.from(slider.children);
+// Apply Slider Components
+const sliders = document.querySelectorAll(".slider");
 
-// Get width, gaps, images count
-let count = parseInt(getComputedStyle(slider).getPropertyValue("--images-count")),
-  gap = parseFloat(getComputedStyle(slider).getPropertyValue("gap")),
-  sliderWidth = parseFloat(getComputedStyle(slider).getPropertyValue("width"));
-let cardWidth = (sliderWidth - gap * (count - 1)) / count;
+sliders.forEach((slider) => {
+  const cardsContainer = slider.querySelector(".cards-container"),
+    cards = Array.from(cardsContainer.children);
+  let count, gap, containerWidth;
 
-function resizeSlides() {
-  count = parseInt(getComputedStyle(slider).getPropertyValue("--images-count"));
-  gap = parseFloat(getComputedStyle(slider).getPropertyValue("gap"));
-  sliderWidth = parseFloat(getComputedStyle(slider).getPropertyValue("width"));
+  function resizeSlides() {
+    count = parseInt(getComputedStyle(cardsContainer).getPropertyValue("--images-count"));
+    gap = parseFloat(getComputedStyle(cardsContainer).getPropertyValue("gap"));
+    containerWidth = parseFloat(getComputedStyle(cardsContainer).getPropertyValue("width"));
 
-  cardWidth = (sliderWidth - gap * (count - 1)) / count;
+    cardWidth = (containerWidth - gap * (count - 1)) / count;
 
-  // set width for visible images
-  cards.forEach((card) => {
-    card.style.width = cardWidth + "px";
-  });
-
-  slider.style.height = null; // reset value when changing content
-  // the height of the heigher card
-  let height =
-    cards.reduce((acc, cur) => {
-      let h = parseFloat(getComputedStyle(cur).getPropertyValue("height"));
-      if (isNaN(acc)) {
-        acc = parseFloat(getComputedStyle(acc).getPropertyValue("height"));
-      }
-      return h > acc ? h : acc;
-    }) + "px";
-  slider.style.height = height;
-  // Move Images
-  slide();
-}
-
-window.addEventListener("load", resizeSlides);
-window.addEventListener("resize", resizeSlides);
-
-// Add Event To Move Slides
-const prevBtn = document.querySelector(".slider-controls .prev"),
-  nextBtn = document.querySelector(".slider-controls .next");
-
-let moves = 0;
-
-function slide() {
-  cards.forEach((card, i) => {
-    card.style.setProperty("--space", (i - moves) * (cardWidth + gap) + "px");
-  });
-  // stop controls till animation ends
-  prevBtn.onclick = null;
-  nextBtn.onclick = null;
-  setTimeout(() => {
-    prevBtn.onclick = moveBack;
-    nextBtn.onclick = moveForward;
-  }, 333);
-}
-
-function moveBack() {
-  moves--;
-  slide();
-  nextBtn.classList.remove("disabled");
-  if (moves <= 0) {
-    this.classList.add("disabled");
-  } else {
-    this.classList.remove("disabled");
+    // set width for cards
+    cards.forEach((card) => {
+      card.style.width = cardWidth + "px";
+    });
+    // reset value when changing content
+    cardsContainer.style.height = null;
+    // get the height of the heigher card
+    let height =
+      cards.reduce((acc, cur) => {
+        let h = parseFloat(getComputedStyle(cur).getPropertyValue("height"));
+        if (isNaN(acc)) {
+          acc = parseFloat(getComputedStyle(acc).getPropertyValue("height"));
+        }
+        return h > acc ? h : acc;
+      }) + "px";
+    cardsContainer.style.height = height;
+    // Move Images
+    slide();
   }
-}
 
-function moveForward() {
-  moves++;
-  slide();
-  prevBtn.classList.remove("disabled");
-  if (moves >= cards.length - count) {
-    this.classList.add("disabled");
-  } else {
-    this.classList.remove("disabled");
+  window.addEventListener("load", resizeSlides);
+  window.addEventListener("resize", resizeSlides);
+
+  // Add Event To Move Slides
+  const prevBtn = slider.querySelector(".slider-controls .prev"),
+    nextBtn = slider.querySelector(".slider-controls .next");
+
+  let moves = 0;
+
+  function slide() {
+    cards.forEach((card, i) => {
+      card.style.setProperty("--space", (i - moves) * (cardWidth + gap) + "px");
+      // stop controls till animation ends
+      prevBtn.onclick = null;
+      nextBtn.onclick = null;
+      setTimeout(() => {
+        prevBtn.onclick = moveBack;
+        nextBtn.onclick = moveForward;
+      }, 333);
+    });
   }
-}
 
-prevBtn.onclick = moveBack;
-nextBtn.onclick = moveForward;
+  function moveBack() {
+    moves--;
+    slide();
+    nextBtn.classList.remove("disabled");
+    if (moves <= 0) {
+      this.classList.add("disabled");
+    } else {
+      this.classList.remove("disabled");
+    }
+  }
+
+  function moveForward() {
+    moves++;
+    slide();
+    prevBtn.classList.remove("disabled");
+    if (moves >= cards.length - count) {
+      this.classList.add("disabled");
+    } else {
+      this.classList.remove("disabled");
+    }
+  }
+
+  prevBtn.onclick = moveBack;
+  nextBtn.onclick = moveForward;
+});

@@ -78,3 +78,56 @@
     letter-spacing: .2em
     &::before
       bottom: -.3em
+
+// Sliders
+.slider
+  background-color: $c-ordinary
+  .cards-container
+    --images-count: 1
+    gap: $s-3
+    position: relative 
+    overflow: hidden
+
+  .card
+    --space: 0
+    position: absolute
+    left: auto
+    right: var(--space)
+    top: 0
+    min-height: 100% // will be effective after giving the parent a height using js
+    transition: inset $fast-trans
+    background-color: $bg-light
+  
+  .slider-controls
+    display: flex
+    justify-content: center
+    padding: $s-5
+    gap: min(5rem, 40%)
+
+    button
+      display: block
+      height: 2.5rem
+      aspect-ratio: 1 / 1
+      border: none
+      background-color: $bg-light
+      cursor: pointer
+      user-select: none
+      transition: background-color $fast-trans
+      &:hover
+        background-color: darken($bg-light, 10%)
+      &.disabled
+        pointer-events: none
+        background-color: rgba($bg-light, 60%)
+      &:not(:focus) 
+        outline: none
+      &.prev
+        clip-path: polygon(100% 50%, 0 0, 0 100%)
+      &.next
+        clip-path: polygon(100% 0, 0 50%, 100% 100%)
+      
+[dir="ltr"] .slider
+  .card
+    right: auto
+    left: var(--space)
+  button
+    transform: scaleX(-1)

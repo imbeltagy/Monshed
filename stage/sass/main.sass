@@ -321,27 +321,15 @@ main
 // 4. Testimonials
 // ===============
 .testimonials
-  .slider
-    --images-count: 1
-    gap: $s-3
-    position: relative 
-    overflow: hidden
+  .cards-container
     @include md-screens
       --images-count: 2
     @include lg-screens
       --images-count: 3
 
   .card
-    --space: 0
-    position: absolute
-    left: auto
-    right: var(--space)
-    top: 0
-    min-height: 100% // will be effective after giving the parent a height using js
-    background-color: $bg-light
     color: rgb($c-ordinary, 80%)
     padding: $s-3
-    transition: inset $fast-trans
     display: grid
     grid-template-rows: auto 1fr
     align-items: center
@@ -374,35 +362,12 @@ main
   .slider-controls
     display: flex
     justify-content: center
-    padding-top: $s-5
+    padding: $s-5
     gap: min(10rem, 40%)
-
-    button
-      display: block
-      height: 2.5rem
-      aspect-ratio: 1 / 1
-      border: none
-      background-color: $bg-light
-      cursor: pointer
-      user-select: none
-      transition: background-color $fast-trans
-      &:hover
-        background-color: darken($bg-light, 10%)
-      &.disabled
-        pointer-events: none
-        background-color: rgba($bg-light, 60%)
-      &:not(:focus) 
-        outline: none
-      &.prev
-        clip-path: polygon(100% 50%, 0 0, 0 100%)
-      &.next
-        clip-path: polygon(100% 0, 0 50%, 100% 100%)
       
 
 [dir="ltr"] .testimonials
   .card
-    right: auto
-    left: var(--space)
     display: flex
     align-items: flex-start
     flex-direction: column
@@ -411,36 +376,68 @@ main
       display: none
     .en
       display: block
-  button
-    transform: scaleX(-1)
 
 // =================
 // 5. Implementations
 // =================
-.implementations .boxes
-  gap: $s-3
-  columns: 1
-  @include md-screens
-    columns: 2
-  @include lg-screens
-    columns: 3
+.implementations .lecture
+  &:not(:last-child)
+    margin-bottom: $s-5
 
-  .box
-    width: 100%
-    border-radius: 1rem
-    overflow: hidden
-    margin-bottom: $s-3
-    background-color: #9799c9
-    color: #fff
-    
-    &:not(:has(> .box__img))
-      padding: $s-3
-    
-    .box__img
-      width: 100%
-    
-    p:not(:last-child)
-      margin-bottom: $s-3
+  .title
+    font-size: 1.5rem
+    text-decoration: underline
+    margin-bottom: $s-4
+  
+  .lecture-content
+    display: grid
+    gap: $s-3
+    grid-template-columns: 1fr
+    @include md-screens
+      grid-template-columns: 1fr 1fr
+    @include lg-screens
+      grid-template-columns: 1fr 1fr 1fr 1fr
+
+    .box
+      background-color: $c-ordinary
+
+      .name
+        color: $c-contrast
+        padding: $s-2 $s-3
+        font-size: 1.3rem
+
+      .slider
+        padding: 0 $s-3 $s-3
+
+        .card
+          background: none
+          img
+            width: 100%
+
+  // .boxes
+  //   gap: $s-3
+  //   columns: 1
+  //   @include md-screens
+  //     columns: 2
+  //   @include lg-screens
+  //     columns: 3
+
+  //   .box
+  //     width: 100%
+  //     border-radius: 1rem
+  //     overflow: hidden
+  //     margin-bottom: $s-3
+  //     background-color: #9799c9
+  //     color: #fff
+      
+  //     &:not(:has(> .box__img))
+  //       padding: $s-3
+      
+  //     .box__img
+  //       width: 100%
+      
+  //     p:not(:last-child)
+  //       margin-bottom: $s-3
     
 // ================
 // 6. Last Interact
