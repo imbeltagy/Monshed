@@ -56,13 +56,13 @@ const contents = {
   // -- card 2
   "card2-h": "Monshed Company",
   "card2-p1":
-    "Manashad Company is a leading player in the field of digital marketing and visual production, established in 2019. We strive to provide top-notch services in the realm of modern advertising and marketing. Despite not having a physical office currently, our aspirations and efforts know no bounds.",
+    "Monshed Company is a leading player in the field of digital marketing and visual production, established in 2019. We strive to provide top-notch services in the realm of modern advertising and marketing. Despite not having a physical office currently, our aspirations and efforts know no bounds.",
   "card2-p2":
-    "At Manashad, we are committed to keeping pace with technological advancements and the challenges of our times. This enables us to offer strategic marketing services for your products and services in innovative and engaging ways. Our experience includes collaboration with major companies and brands, equipping us with the expertise and knowledge necessary to meet your requirements efficiently and professionally.",
+    "At Monshed, we are committed to keeping pace with technological advancements and the challenges of our times. This enables us to offer strategic marketing services for your products and services in innovative and engaging ways. Our experience includes collaboration with major companies and brands, equipping us with the expertise and knowledge necessary to meet your requirements efficiently and professionally.",
   "card2-p3":
     "We offer a wide range of services, including digital marketing across social media platforms, graphic design and promotional materials, and video production adhering to the highest standards of quality and innovation. Our team consists of qualified and professional experts in various fields, and we are confident in our ability to effectively achieve your marketing goals.",
   "card2-p4":
-    "We prioritize delivering an exceptional customer experience and hold your satisfaction as our utmost priority. If you're in search of a reliable and creative partner to enhance your digital presence and achieve success, the Manashad Company team is ready to collaborate with you, working together to achieve remarkable results. Contact us now to kickstart our joint efforts toward exceptional success.",
+    "We prioritize delivering an exceptional customer experience and hold your satisfaction as our utmost priority. If you're in search of a reliable and creative partner to enhance your digital presence and achieve success, the Monshed Company team is ready to collaborate with you, working together to achieve remarkable results. Contact us now to kickstart our joint efforts toward exceptional success.",
   "card2-contact-text": "🔗📧 Contact Link",
   // -- card 3
   "card3-h": "Digital Marketing Course",
@@ -87,6 +87,10 @@ const contents = {
   // Implementations
   "implementations-headding-h": "Students Implementations",
   "implementations-headding-p": "Some of our students implementations on Digital Marketing Course",
+  lecture1: "The first lecture: advertising writing",
+  lecture2: "The second lecture: planning a successful project",
+  lecture3: "Third lecture: How to create a design",
+  lecture4: "Fourth lecture: How to make a professional page",
   // Feedback
   /* "feedback-headding-h": "Feedback",
   "feedback-headding-p": "What them sayed about us",

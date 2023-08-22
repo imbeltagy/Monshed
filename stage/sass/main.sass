@@ -386,7 +386,7 @@ main
 
   .title
     font-size: 1.5rem
-    text-decoration: underline
+    // text-decoration: underline
     margin-bottom: $s-4
   
   .lecture-content
@@ -400,19 +400,26 @@ main
 
     .box
       background-color: $c-ordinary
+      color: $c-contrast
+      padding: $s-3
+      line-height: 1.8
 
-      .name
-        color: $c-contrast
-        padding: $s-2 $s-3
-        font-size: 1.3rem
+      p
+        margin-top: $s-2
 
-      .slider
-        padding: 0 $s-3 $s-3
+  [data-name="lecture2"] + .lecture-content
+    @include md-screens
+      grid-template-columns: 1fr
+    @include lg-screens
+      grid-template-columns: 1fr 1fr
 
-        .card
-          background: none
-          img
-            width: 100%
+  [data-name="lecture3"] + .lecture-content
+    align-items: flex-start
+    @include md-screens
+      grid-template-columns: 1fr 1fr 1fr
+    @include lg-screens
+      grid-template-columns: 1fr 1fr 1fr
+
 
   // .boxes
   //   gap: $s-3
