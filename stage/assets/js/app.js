@@ -1,3 +1,10 @@
+// Hide Small Images When The Biger Is Loaded
+Array.from(document.getElementsByClassName("high-res")).forEach((img) => {
+  img.onload = () => {
+    img.nextElementSibling.style.opacity = "0";
+  };
+});
+
 // Open Nav List In Small Screens
 document.getElementById("nav-icon").onclick = function () {
   this.classList.toggle("opened");
@@ -27,6 +34,7 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
 // Switch Languages
 const contents = {
   // Nav

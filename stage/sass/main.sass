@@ -43,8 +43,15 @@ body
     @include lg-screens
       width: 73rem
 
-.img-container img 
-  max-width: 100%
+.img-container
+  position: relative
+  img 
+    width: 100%
+    &.high-res
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
 
 // =======
 // 2. Hero
@@ -55,7 +62,7 @@ body
   display: grid
   place-items: center
   padding-top: 7.5rem
-  background-image: url("../images/hero/hero-bg.png")
+  background-image: url("../images/hero/hero-bg.png"), url("../images/hero/hero-bg-sm.png")
   background-position: right top
   background-size: cover
   background-repeat: no-repeat
@@ -261,14 +268,15 @@ main .container
 main
   .container .picture
     flex-shrink: 0
+    width: 100%
     @include md-screens
       max-width: 22rem
     @include lg-screens
       max-width: 30rem
 
-    img
+    .img-container
       width: 100%
-[dir="rtl"] main .picture img
+[dir="rtl"] main .picture .img-container
   transform: scaleX(-1)
 
 // ========
@@ -423,7 +431,7 @@ main
 // 6. Last Interact
 // ================
 .last-interact
-  background-image: url("../images/banner.png")
+  background-image: url("../images/banner.png"), url("../images/banner-sm.png")
   background-attachment: fixed
   background-size: cover
   background-position: center

@@ -44,7 +44,9 @@ html(lang="ar", dir="rtl")
             p.brief(data-name="main-bief") لدينا دورة تعلمك التسويق الالكتروني من الصفر
             a.btn(href="mailto:contact@monshed.com?subject=Digital%20Marketing%20Course", data-name="main-link") احجز الآن!
           .picture
-            img(src="assets/images/hero/hero-picture.png" alt="Zaid Picture")
+            .img-container
+              img.high-res(src="assets/images/hero/hero-picture.png", alt="Zaid Picture")
+              img(src="assets/images/hero/hero-picture-sm.png", alt="Zaid Picture")
             
     //- About Section
     section#about.about.bg-light
@@ -55,7 +57,9 @@ html(lang="ar", dir="rtl")
 
         .cards 
           .card 
-            img(src="assets/images/about/about-zaid.png", alt="Zaid Picture")
+            .img-container
+              img.high-res(src="assets/images/about/about-zaid.png", alt="Zaid Picture")
+              img(src="assets/images/about/about-zaid-sm.png", alt="Zaid Picture")
             .text 
               h3(data-name="card1-h") زيد أسامة
               p(data-name="card1-p1") مرحبًا، أنا زيد اسامة عزام، مسوق إلكتروني مقيم في مصر. لدي خبرة تزيد عن 8 أعوام في مجال الإدارة والتسويق. انا مؤسس لشركة منشد، حيث قمت بتطوير استراتيجيات التسويق وتحقيق النجاح في حملات الإعلانات وترويج المنتجات والخدمات. 
@@ -65,7 +69,9 @@ html(lang="ar", dir="rtl")
               a.contact(href="#")
                 span(data-name="card1-contact-text") 🔗📧 رابط التواصل
           .card 
-            img(src="assets/images/about/about-monshed.png", alt="Monshed Cover Image")
+            .img-container
+              img.high-res(src="assets/images/about/about-monshed.png", alt="Monshed Cover Image")
+              img(src="assets/images/about/about-monshed-sm.png", alt="Monshed Cover Image")
             .text 
               h3(data-name="card2-h") شركة منشد
               p(data-name="card2-p1") شركة منشد هي شركة رائدة في مجال التسويق الرقمي والإنتاج المرئي، تأسست عام 2019. نحن نسعى جاهدين لتقديم أفضل الخدمات في عالم الإعلان والتسويق الحديث. على الرغم من أننا لا نملك مقرًا حاليًا، إلا أن تطلعاتنا وجهودنا لا تعرف الحدود.
@@ -75,7 +81,9 @@ html(lang="ar", dir="rtl")
               a.contact(href="#")
                 span(data-name="card2-contact-text") 🔗📧 رابط التواصل
           .card 
-            img(src="assets/images/about/about-course.png", alt="Course Cover Image")
+            .img-container
+              img.high-res(src="assets/images/about/about-course.png", alt="Course Cover Image")
+              img(src="assets/images/about/about-course-sm.png", alt="Course Cover Image")
             .text 
               h3(data-name="card3-h") كورس التسويق الالكتروني
               p(data-name="card3-p1") دورة التدريب التسويقي المتميزة تهدف إلى تطوير مهاراتك في عالم التسويق الرقمي وتحقيق نجاحك في مجال الأعمال عبر الإنترنت. سواء كنت راغبًا في زيادة مبيعاتك، تحسين دخلك، أو بناء عملك الخاص من الصفر، فإن هذه الدورة تلبي احتياجاتك.
@@ -354,11 +362,17 @@ html(lang="ar", dir="rtl")
           h3.title(data-name="lecture3") المحاضرة الثالثة: كيفية انشاء تصميم
           .lecture-content
             .box
-              img(src="assets/images/implementations/implementations-2.jpg", alt="Student implementation picture")
+              .img-container
+                img.high-res(src="assets/images/implementations/implementations-2.jpg", alt="Student implementation picture")
+                img(src="assets/images/implementations/implementations-2-sm.jpg", alt="Student implementation picture")
             .box
-              img(src="assets/images/implementations/implementations-1.jpg", alt="Student implementation picture")
+              .img-container
+                img.high-res(src="assets/images/implementations/implementations-1.jpg", alt="Student implementation picture")
+                img(src="assets/images/implementations/implementations-1-sm.jpg", alt="Student implementation picture")
             .box
-              img(src="assets/images/implementations/implementations-3.png", alt="Student implementation picture")
+              .img-container
+                img.high-res(src="assets/images/implementations/implementations-3.png", alt="Student implementation picture")
+                img(src="assets/images/implementations/implementations-3-sm.png", alt="Student implementation picture")
 
         .lecture
           h3.title(data-name="lecture4") المحاضرة الرابعة: كيفية عمل صفحة احترافية
