@@ -54,9 +54,10 @@ const contents = {
   "main-title": "Social Media and Digital Marketing Services",
   "main-bief": "We have a course that teaches you digital marketing from scratch",
   "main-link": "Book Now!",
+  "hero-caption": "Zaid Osama, Monshed Company Esablisher",
   // About
   "about-headding-h": "About Us",
-  "about-headding-p": "All you need to know about us.",
+  "about-headding-p": "Zaid Osama, the founder of Munshed Company",
   // -- card 1
   "card1-h": "Zaid Osama",
   "card1-p1":

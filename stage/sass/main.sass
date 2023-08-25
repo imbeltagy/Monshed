@@ -272,12 +272,22 @@ main .container
 
 main
   .container .picture
+    position: relative
     flex-shrink: 0
     width: 100%
     @include md-screens
       max-width: 22rem
     @include lg-screens
       max-width: 30rem
+
+    .caption
+      color: rgba($c-contrast, 80%)
+      font-family: $f-special
+      position: absolute
+      left: 0
+      bottom: .8rem
+      width: 100%
+      text-align: center
 
     .img-container
       width: 100%
