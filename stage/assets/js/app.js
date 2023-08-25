@@ -155,7 +155,7 @@ switcher.onclick = () => {
   localStorage.setItem("dir", dir);
   toggleContent();
   // Resize Card on Testimonials
-  resizeSlides();
+  testimonialsSlider.resizeSlides();
 };
 window.addEventListener("load", () => {
   dir = localStorage.getItem("dir") || html.dir;
@@ -165,84 +165,90 @@ window.addEventListener("load", () => {
 });
 
 // Apply Slider Components
-const sliders = document.querySelectorAll(".slider");
+class Slider {
+  constructor(slider) {
+    this.slider = slider;
+    this.cardsContainer = slider.querySelector(".cards-container");
+    this.cards = Array.from(this.cardsContainer.children);
+    this.count;
+    this.gap;
+    this.containerWidth;
+    this.cardWidth;
+    (this.prevBtn = slider.querySelector(".slider-controls .prev")),
+      (this.nextBtn = slider.querySelector(".slider-controls .next"));
+    this.moves = 0;
+  }
 
-sliders.forEach((slider) => {
-  const cardsContainer = slider.querySelector(".cards-container"),
-    cards = Array.from(cardsContainer.children);
-  let count, gap, containerWidth;
+  resizeSlides = () => {
+    this.count = parseInt(getComputedStyle(this.cardsContainer).getPropertyValue("--images-count"));
+    this.gap = parseFloat(getComputedStyle(this.cardsContainer).getPropertyValue("gap"));
+    this.containerWidth = parseFloat(getComputedStyle(this.cardsContainer).getPropertyValue("width"));
 
-  function resizeSlides() {
-    count = parseInt(getComputedStyle(cardsContainer).getPropertyValue("--images-count"));
-    gap = parseFloat(getComputedStyle(cardsContainer).getPropertyValue("gap"));
-    containerWidth = parseFloat(getComputedStyle(cardsContainer).getPropertyValue("width"));
-
-    cardWidth = (containerWidth - gap * (count - 1)) / count;
+    this.cardWidth = (this.containerWidth - this.gap * (this.count - 1)) / this.count;
 
     // set width for cards
-    cards.forEach((card) => {
-      card.style.width = cardWidth + "px";
+    this.cards.forEach((card) => {
+      card.style.width = this.cardWidth + "px";
     });
     // reset value when changing content
-    cardsContainer.style.height = null;
+    this.cardsContainer.style.height = null;
     // get the height of the heigher card
     let height =
-      cards.reduce((acc, cur) => {
+      this.cards.reduce((acc, cur) => {
         let h = parseFloat(getComputedStyle(cur).getPropertyValue("height"));
         if (isNaN(acc)) {
           acc = parseFloat(getComputedStyle(acc).getPropertyValue("height"));
         }
         return h > acc ? h : acc;
       }) + "px";
-    cardsContainer.style.height = height;
+    this.cardsContainer.style.height = height;
     // Move Images
-    slide();
-  }
+    this.slide();
+  };
 
-  window.addEventListener("load", resizeSlides);
-  window.addEventListener("resize", resizeSlides);
+  moveBack = () => {
+    this.moves--;
+    this.slide();
+    this.nextBtn.classList.remove("disabled");
+    if (this.moves <= 0) {
+      this.prevBtn.classList.add("disabled");
+    } else {
+      this.prevBtn.classList.remove("disabled");
+    }
+  };
 
-  // Add Event To Move Slides
-  const prevBtn = slider.querySelector(".slider-controls .prev"),
-    nextBtn = slider.querySelector(".slider-controls .next");
+  moveForward = () => {
+    this.moves++;
+    this.slide();
+    this.prevBtn.classList.remove("disabled");
+    if (this.moves >= this.cards.length - this.count) {
+      this.nextBtn.classList.add("disabled");
+    } else {
+      this.nextBtn.classList.remove("disabled");
+    }
+  };
 
-  let moves = 0;
-
-  function slide() {
-    cards.forEach((card, i) => {
-      card.style.setProperty("--space", (i - moves) * (cardWidth + gap) + "px");
+  slide = () => {
+    this.cards.forEach((card, i) => {
+      card.style.setProperty("--space", (i - this.moves) * (this.cardWidth + this.gap) + "px");
       // stop controls till animation ends
-      prevBtn.onclick = null;
-      nextBtn.onclick = null;
+      this.prevBtn.onclick = null;
+      this.nextBtn.onclick = null;
       setTimeout(() => {
-        prevBtn.onclick = moveBack;
-        nextBtn.onclick = moveForward;
+        this.prevBtn.onclick = this.moveBack;
+        this.nextBtn.onclick = this.moveForward;
       }, 333);
     });
-  }
+  };
 
-  function moveBack() {
-    moves--;
-    slide();
-    nextBtn.classList.remove("disabled");
-    if (moves <= 0) {
-      this.classList.add("disabled");
-    } else {
-      this.classList.remove("disabled");
-    }
-  }
+  start = () => {
+    this.resizeSlides();
+    window.addEventListener("resize", this.resizeSlides);
 
-  function moveForward() {
-    moves++;
-    slide();
-    prevBtn.classList.remove("disabled");
-    if (moves >= cards.length - count) {
-      this.classList.add("disabled");
-    } else {
-      this.classList.remove("disabled");
-    }
-  }
+    this.prevBtn.onclick = this.moveBack;
+    this.nextBtn.onclick = this.moveForward;
+  };
+}
 
-  prevBtn.onclick = moveBack;
-  nextBtn.onclick = moveForward;
-});
+let testimonialsSlider = new Slider(document.querySelector("#testimonials .slider"));
+window.addEventListener("load", testimonialsSlider.start);
