@@ -28,6 +28,43 @@
     background-color: darken($c-accent, 10%)
     box-shadow: none
 
+// Collapse Content
+.collapse
+  overflow: hidden
+  display: grid
+  grid-template-rows: 1fr
+  transition: grid-template-rows $md-trans
+  .content
+    overflow: hidden
+
+.collapsed .collapse
+  grid-template-rows: 0fr
+
+.view-more
+  display: block
+  width: 100%
+  background-color: $c-ordinary
+  border: none
+  padding: $s-2 $s-3
+  cursor: pointer
+  transition: background-color $md-trans
+  &:hover
+    background-color: darken($c-ordinary, 5%)
+
+  span
+    display: block
+    background-color: $c-contrast
+    height: 1rem
+    aspect-ratio: 1 / 1
+    cursor: pointer
+    clip-path: polygon(0 0, 100% 0, 50% 100%)
+    transform: rotate(180deg)
+    transition: transform $md-trans
+
+.collapsed .view-more span, .view-more:hover span
+  transform: rotate(0deg)
+.collapsed .view-more:hover span
+  transform: rotate(180deg)
 
 // Sections headdings
 .headding

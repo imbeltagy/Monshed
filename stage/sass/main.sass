@@ -284,6 +284,7 @@ main
 // ========
 .about .cards
   display: grid
+  align-items: flex-start
   gap: $s-3
   @include md-screens
     grid-template-columns: 1fr 1fr
@@ -300,29 +301,29 @@ main
 
     .text
       padding: $s-3
-      padding-bottom: $s-4
+      padding-bottom: $s-2
 
-    h3
-      font-size: 1.4rem
-      line-height: 2
+      h3
+        font-size: 1.4rem
+        line-height: 2
 
-    p
-      margin-top: $s-3
-    
-    a
-      display: block
-      color: inherit
-      text-decoration: none
-      margin-top: $s-3
+      p
+        margin-top: $s-3
+      
+      a
+        display: block
+        color: inherit
+        text-decoration: none
+        margin-top: $s-3
 
-      &:hover
-        color: $c-accent
-    
-    h4
-      padding: $s-3 0  $s-2
-    
-    li:not(:last-child)
-      margin-bottom: $s-2
+        &:hover
+          color: $c-accent
+      
+      h4
+        padding: $s-3 0  $s-2
+      
+      li:not(:last-child)
+        margin-bottom: $s-2
 
 // ===============
 // 4. Testimonials
@@ -398,6 +399,7 @@ main
   
   .lecture-content
     display: grid
+    align-items: flex-start
     gap: $s-3
     grid-template-columns: 1fr
     @include md-screens
@@ -408,11 +410,23 @@ main
     .box
       background-color: $c-ordinary
       color: $c-contrast
-      padding: $s-3
       line-height: 1.8
+      > .content
+        padding: $s-3
+      .text
+        padding: $s-3
+        padding-bottom: 0
 
       p
         margin-top: $s-2
+
+  [data-name="lecture1"] + .lecture-content .box
+    display: grid
+    grid-template-rows: 1fr auto
+    @include md-screens
+      min-height: 17rem
+    @include lg-screens
+      min-height: 19rem
 
   [data-name="lecture2"] + .lecture-content
     @include md-screens
