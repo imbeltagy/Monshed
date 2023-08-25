@@ -48,22 +48,36 @@
   padding: $s-2 $s-3
   cursor: pointer
   transition: background-color $md-trans
+  text-align: start
   &:hover
     background-color: darken($c-ordinary, 5%)
 
   span
-    display: block
+    display: inline-block
+    color: $c-contrast
+
+  .shape
     background-color: $c-contrast
-    height: 1rem
+    height: .8rem
     aspect-ratio: 1 / 1
     cursor: pointer
     clip-path: polygon(0 0, 100% 0, 50% 100%)
     transform: rotate(180deg)
     transition: transform $md-trans
+    margin-inline-end: $s-2
 
-.collapsed .view-more span, .view-more:hover span
+  .more
+    display: none
+
+.collapsed .view-more
+  .less
+    display: none
+  .more
+    display: inline-block
+
+.collapsed .view-more .shape, .view-more:hover .shape
   transform: rotate(0deg)
-.collapsed .view-more:hover span
+.collapsed .view-more:hover .shape
   transform: rotate(180deg)
 
 // Sections headdings

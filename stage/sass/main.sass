@@ -53,6 +53,11 @@ body
       left: 0
       width: 100%
 
+[dir="ltr"] .ar
+  display: none !important
+[dir="rtl"] .en
+  display: none !important
+
 // =======
 // 2. Hero
 // =======
@@ -345,8 +350,6 @@ main
     .name
       display: block
       font-size: 1.1rem
-    .en
-      display: none
 
     blockquote
       position: relative
@@ -380,10 +383,6 @@ main
     align-items: flex-start
     flex-direction: column
     justify-content: space-between
-    .ar
-      display: none
-    .en
-      display: block
 
 // =================
 // 5. Implementations
