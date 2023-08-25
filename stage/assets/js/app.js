@@ -60,7 +60,7 @@ const contents = {
   // -- card 1
   "card1-h": "Zaid Osama",
   "card1-p1":
-    "Hello, I'm Zaid Osama Azab, an electronic marketer based in Egypt. I have over 8 years of experience in management and marketing. I'm the founder of Manshad Company, where I have developed marketing strategies and achieved success in advertising campaigns and promoting products and services.",
+    "Hello, I'm Zaid Osama Azam, an electronic marketer based in Egypt. I have over 8 years of experience in management and marketing. I'm the founder of Manshad Company, where I have developed marketing strategies and achieved success in advertising campaigns and promoting products and services.",
   "card1-p2":
     "I have obtained training certificates in the field of marketing from recognized institutes in Saudi Arabia and Egypt, including Al-Qadisiyah Business Institute. I have kept myself updated and stayed current with the latest developments in digital marketing.",
   "card1-p3":
