@@ -312,6 +312,8 @@ main
     background-color: $c-ordinary
     color: $c-contrast
     overflow: hidden
+    display: grid
+    grid-template-rows: auto 1fr auto
 
     img
       width: 100%
@@ -328,27 +330,31 @@ main
       p
         margin-top: $s-3
       
-      a
-        display: block
-        color: inherit
-        text-decoration: none
-        margin-top: $s-3
-        &:hover
-          color: $c-accent
-
-        i, svg
-          font-size: 1.2em
-          display: inline-block
-          margin-inline-end: $s-2
-      
       h4
         padding: $s-3 0  $s-2
       
       li:not(:last-child)
         margin-bottom: $s-2
+      
+    a
+      display: block
+      color: inherit
+      text-decoration: none
+      margin: 0 $s-3 $s-3
+      &:hover
+        color: $c-accent
 
-[dir="ltr"] .about .cards h3
-  letter-spacing: .05em
+      i, svg
+        font-size: 1.2em
+        display: inline-block
+        margin-inline-end: $s-2
+
+[dir="ltr"] .about .cards
+  @include lg-screens
+    .card
+      min-height: 34rem
+  h3
+    letter-spacing: .05em
 
 // ===============
 // 4. Testimonials
