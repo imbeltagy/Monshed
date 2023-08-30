@@ -50,11 +50,10 @@ const contents = {
   "nav-testimonials": "Testimonials",
   "nav-implementations": "Implementations",
   // Main
-  "main-welcome": "Hello, we are Monshed Company. We specialize in",
+  "main-welcome": "Hello, I'm Zaid, the founder of Monshed Company. We specialize in",
   "main-title": "Social Media and Digital Marketing Services",
   "main-bief": "We have a course that teaches you digital marketing from scratch",
   "main-link": "Book Now!",
-  "hero-caption": "Coach/ Zaid Osama",
   // About
   "about-headding-h": "About Us",
   "about-headding-p": "Zaid Osama, the founder of Munshed Company",
@@ -106,12 +105,7 @@ const contents = {
   lecture1: "The first lecture: advertising writing",
   lecture2: "The second lecture: planning a successful project",
   lecture3: "Third lecture: How to create a design",
-  lecture4: "Fourth lecture: How to make a professional page",
-  // Feedback
-  /* "feedback-headding-h": "Feedback",
-  "feedback-headding-p": "What them sayed about us",
-  "feedback-quote":
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, aperiam veniam odit alias pariatur velit", */
+  lecture4: "Fourth lecture: How to create a professional advertisement",
   // Last Interact
   "last-interact-text": "Don't forget to join our Digital Markteing course.",
   "last-interact-deal": "Special discount for the first ten trainees in each course.",
