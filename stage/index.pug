@@ -11,6 +11,8 @@ html(lang="ar", dir="rtl")
   meta(name="description", content="الصفحة الرسمية لشركة منشد. اكتشف دورة التسويق الإلكتروني واستفد من مهاراتك في عالم التسويق الرقمي.")
   meta(name="keyword", content="Digital marketing, Training course, Online business, Design in marketing, Social media advertising")
 
+  //- FontAwsome Style Sheet
+  link(rel="stylesheet", href="assets/css/all.min.css")
   //- Style Sheet
   link(rel="stylesheet", href="assets/css/main.css")
 
@@ -479,6 +481,13 @@ html(lang="ar", dir="rtl")
                   img.high-res(src="assets/images/implementations/lecture4-2.jpg", alt="Student implementation picture")
                   img(src="assets/images/implementations/lecture4-2.jpg", alt="Student implementation picture")
 
+    #showImg
+      .content
+        .close-btn 
+          i.fa-solid.fa-xmark
+        .img-container
+          img(src="assets/images/implementations/implementations-3-sm.png", alt="Student implementation picture")
+
     //- Last Interact Section
     section.last-interact 
       .container
@@ -504,5 +513,7 @@ html(lang="ar", dir="rtl")
             li 
               a(href="#implementations", data-name="footer-implementations") التطبيقات
 
+    //- FontAwesome Script
+    script(src="assets/js/all.min.js") 
     //- Custom Script
     script(src="assets/js/app.js") 

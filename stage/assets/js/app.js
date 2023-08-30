@@ -253,3 +253,19 @@ class Slider {
 
 let testimonialsSlider = new Slider(document.querySelector("#testimonials .slider"));
 window.addEventListener("load", testimonialsSlider.start);
+
+// Apply Zoom on Implements Img
+const showImg = document.getElementById("showImg");
+showImg.querySelector(".close-btn").onclick = () => {
+  showImg.style.display = "none";
+};
+
+let imgs = Array.from(document.querySelectorAll("#implementations .img-container"));
+imgs.forEach((e) => {
+  e.onclick = () => {
+    // get img src
+    let src = e.lastElementChild.src;
+    showImg.style.display = "grid";
+    showImg.querySelector("img").src = src.replace("-sm", "");
+  };
+});

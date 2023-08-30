@@ -426,8 +426,39 @@ main
       background-color: $c-ordinary
       color: $c-contrast
       line-height: 1.8
+
       > .content
         padding: $s-3
+
+        .img-container
+          position: relative
+          pointer-events: none
+          @include md-screens
+            pointer-events: all
+            height: 15rem
+            cursor: pointer
+          &::after
+            font-family: "Font Awesome 5 Free"
+            font-weight: 900
+            content: "\f00e"
+            position: absolute
+            inset: 0
+            color: #fff
+            font-size: 3rem
+            display: grid
+            place-items: center
+            background-color: #0003
+            opacity: 0
+            transition: opacity $fast-trans
+          &:hover::after
+            @include md-screens
+              opacity: 1
+
+          img
+            height: 100%
+            object-fit: cover
+            object-position: center top
+
       .text
         padding: $s-3
         padding-bottom: 0
@@ -456,6 +487,32 @@ main
     @include lg-screens
       grid-template-columns: 1fr 1fr 1fr
     
+#showImg
+  position: fixed
+  z-index: 100
+  inset: 0
+  background-color: #0009
+  display: none
+  place-items: center
+
+  .content
+    display: grid
+    place-items: center
+    max-width: min(50rem, 90vw)
+  
+    .close-btn
+      margin-inline-start: auto
+      color: $c-contrast
+      font-size: 2rem
+      cursor: pointer
+
+    .img-container
+      width: 100%
+
+      img
+        display: block
+        max-height: calc(95svh - 5rem)
+
 // ================
 // 6. Last Interact
 // ================
