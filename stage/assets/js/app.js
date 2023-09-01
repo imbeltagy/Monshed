@@ -1,10 +1,3 @@
-// Hide Small Images When The Biger Is Loaded
-Array.from(document.getElementsByClassName("high-res")).forEach((img) => {
-  img.onload = () => {
-    img.nextElementSibling.style.opacity = "0";
-  };
-});
-
 // Collapse Button Function
 Array.from(document.getElementsByClassName("view-more")).forEach((btn) => {
   btn.onclick = () => {
@@ -248,7 +241,7 @@ class Slider {
 let testimonialsSlider = new Slider(document.querySelector("#testimonials .slider"));
 window.addEventListener("load", testimonialsSlider.start);
 
-// Apply Zoom on Implements Img
+// Apply Zoom on Implements Imgs
 const showImg = document.getElementById("showImg");
 showImg.querySelector(".close-btn").onclick = () => {
   showImg.style.display = "none";
@@ -258,8 +251,8 @@ let imgs = Array.from(document.querySelectorAll("#implementations .img-container
 imgs.forEach((e) => {
   e.onclick = () => {
     // get img src
-    let src = e.lastElementChild.src;
+    let src = e.querySelector(".high-res").src;
     showImg.style.display = "grid";
-    showImg.querySelector("img").src = src.replace("-sm", "");
+    showImg.querySelector("img").src = src.replace("-md", "");
   };
 });
