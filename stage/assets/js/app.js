@@ -78,7 +78,7 @@ const contents = {
     "We offer a wide range of services, including digital marketing across social media platforms, graphic design and promotional materials, and video production adhering to the highest standards of quality and innovation. Our team consists of qualified and professional experts in various fields, and we are confident in our ability to effectively achieve your marketing goals.",
   "card2-p4":
     "We prioritize delivering an exceptional customer experience and hold your satisfaction as our utmost priority. If you're in search of a reliable and creative partner to enhance your digital presence and achieve success, the Monshed Company team is ready to collaborate with you, working together to achieve remarkable results. Contact us now to kickstart our joint efforts toward exceptional success.",
-  "card2-contact-text": "Contact Link",
+  "card2-contact-text": "Facebook Page",
   // -- card 3
   "card3-h": "Digital Marketing Course",
   "card3-p1":

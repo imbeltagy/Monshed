@@ -68,11 +68,16 @@ body
   display: grid
   place-items: center
   padding-top: 7.5rem
-  background-image: url("../images/hero/hero-bg.png"), url("../images/hero/hero-bg-sm.png")
+  background-image: url("../images/hero/hero-bg-md.png"), url("../images/hero/hero-bg-sm.png")
   background-position: right top
   background-size: cover
   background-repeat: no-repeat
   background-color: #0b1765
+  @include lg-screens
+    background-image: url("../images/hero/hero-bg-lg.png"), url("../images/hero/hero-bg-sm.png")
+  @media (min-width: 3200px)
+    background-image: url("../images/hero/hero-bg.png"), url("../images/hero/hero-bg-sm.png")
+
 
 // Nav Bar
 .navbar
@@ -580,10 +585,25 @@ footer
   .brand
     max-width: 10rem
 
+    img
+      margin-bottom: $s-2
+
+    .social
+      width: 100%
+      display: flex
+      justify-content: space-between
+      font-size: 1.5rem
+
+      a
+        cursor: pointer
+        &:hover
+          color: $c-accent
+
   .pagination
     flex-shrink: 0
 
   ul
+    font-size: 1.1rem
     text-align: center
     @include sm-screens
       display: flex
