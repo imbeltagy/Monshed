@@ -192,8 +192,8 @@ html(lang="ar", dir="rtl")
                 q(dir="rtl") بصراحه المعلومه بتتسرب ليا بكل بساطه وده بيرجع لأسلوبك في الشرح ياكوتش زيد.. بجد المحاضره رائعه .. وانا من الناس اللي مش فاهمين اوي في التسويق بس بعد ما اخدت الكورس ده بحس اني كل يوم ابتديت احب المجال ده اكتر.. جزاك الله عنا كل خير  
               p.en — Frankly, the information is simply leaked to me, and this is due to your style of explanation, Captain Zaid. Really the lecture is wonderful And I am one of the people who don't understand marketing very well, but after I took this course, I feel that every day I started to love this field more.. May Allah reward you well for us
           .slider-controls
-            button.prev.disabled
-            button.next
+            button.prev.disabled(aria-label="Previous")
+            button.next(aria-label="Next")
                         
     //- Students Implementations Section
     section#implementations.implementations.bg-light
@@ -524,17 +524,17 @@ html(lang="ar", dir="rtl")
         .col.brand 
           img(src="assets/images/brand.png", width="200", height="52", alt="Monshed", style="filter: brightness(0) invert(1)")
           .social(dir="ltr")
-            a(href="https://www.facebook.com/Monshedza", target="_blank")
+            a(href="https://www.facebook.com/Monshedza", aria-label="Visit Monshed Facebook page", target="_blank")
               i.fa-brands.fa-square-facebook 
-            a(href="mailto:monshedza@gmail.com", target="_blank")
+            a(href="mailto:monshedza@gmail.com", aria-label="Send an email to Monshed", target="_blank")
               i.fa-solid.fa-envelope
-            a(href="https://www.youtube.com/channel/UC-Yp5B8yt7M6ywNe8di0EiA", target="_blank") 
+            a(href="https://www.youtube.com/channel/UC-Yp5B8yt7M6ywNe8di0EiA", aria-label="Visit Monshed Youtube channel", target="_blank") 
               i.fa-brands.fa-youtube 
-            a(href="https://www.instagram.com/monshedza/?hl=ar", target="_blank") 
+            a(href="https://www.instagram.com/monshedza/?hl=ar", aria-label="Visit Monshed Instagram", target="_blank") 
               i.fa-brands.fa-instagram 
-            a(href="https://wa.me/201014258739", target="_blank") 
+            a(href="https://wa.me/201014258739", aria-label="Chat with Monshed on Whatsapp", target="_blank") 
               i.fa-brands.fa-whatsapp 
-        .col.pagination
+        .col.pagination(aria-label="Navigation")
           ul
             li 
               a(href="#home", data-name="footer-home") الرئيسية
