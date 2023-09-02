@@ -47,6 +47,7 @@ body
   position: relative
   img 
     width: 100%
+    height: auto
     &.high-res
       position: absolute
       top: 0
@@ -225,6 +226,7 @@ body
       img
         padding: $s-3 $s-5
         max-width: 2.5rem + $s-5 + $s-5
+        box-sizing: content-box
         @include md-screens
           max-width: 2.5rem
           padding: 0
@@ -288,6 +290,10 @@ main
 
     .img-container
       width: 100%
+
+      img
+        aspect-ratio: 1 / 1
+
 [dir="rtl"] main .picture .img-container
   transform: scaleX(-1)
 
@@ -522,13 +528,17 @@ main
 // 6. Last Interact
 // ================
 .last-interact
-  background-image: url("../images/hero/hero-bg.png"), url("../images/hero/hero-bg-sm.png")
+  background-image: url("../images/hero/hero-bg-md.png"), url("../images/hero/hero-bg-sm.png")
   background-attachment: fixed
   background-size: cover
   background-position: center
   background-repeat: no-repeat
   background-color: #0b1765
   color: $c-contrast
+  @include lg-screens
+    background-image: url("../images/hero/hero-bg-lg.png"), url("../images/hero/hero-bg-sm.png")
+  @media (min-width: 3200px)
+    background-image: url("../images/hero/hero-bg.png"), url("../images/hero/hero-bg-sm.png")
 
   .container
     display: flex
@@ -583,10 +593,11 @@ footer
       justify-content: space-between
 
   .brand
-    max-width: 10rem
+    max-width: 200px
 
     img
       margin-bottom: $s-2
+      height: auto
 
     .social
       width: 100%
